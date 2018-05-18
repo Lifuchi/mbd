@@ -20,6 +20,26 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+    <!-- buat table -->
+    <!-- <script type="text/javascript" src="../DataTables/datatables.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src=" https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+ -->
+        <script>
+          $(document).ready( function () {
+            $('#myTable').DataTable(  {
+              "pageLength": 5
+              });
+        } );
+      </script>
+    <!-- <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/> -->
+   
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+   
+
     <!-- Custom styles for this template -->
     <link href="../css/agency.min.css" rel="stylesheet">
 
@@ -57,95 +77,130 @@
       </div>
     </nav>
 
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default navbar-fixed-top my-navbar" style="margin-bottom: 0px; z-index: 5">
-  <a class="navbar-brand" href="#">HelpYow</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cleaner</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Technician</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Join Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
-      </li>
-    </ul>
-{{--     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" placeholder="Search" type="text">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form> --}}
-  </div>
-</nav>
-
-  -->
-
-  <div class="container">
-  <h2>Table</h2>
-  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
+  <div class="container" style="margin-top: 130px;" >
+  <h2>Pegawai</h2>                                                                                   
+  <div class="table-responsive" >          
+  <table id="myTable" class="table display table-striped table-hover table-sm table-bordered">
+    <thead class="thead-light ">
       <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
+        <th>P_ID</th>
+        <th>Nama</th>
+        <th>EMAIL</th>
+        <th>TELP</th>
+        <th>JENISKELAMIN</th>
+        <th>ALAMAT</th>
+        <th>GAJI</th>
+        <th>JABATAN</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-      </tr>
+     
+              
+          <?php
+                    include '../Database/connect.php';
+                     $sql = "SELECT * FROM pegawai order by P_ID ";
+                    $hasil = mysqli_query($sqlconnect,$sql);
+
+                    if($hasil->num_rows != 0){
+
+                      while ($rows = $hasil->fetch_assoc()) {
+                        $P_ID = $rows['P_ID'];
+                        $P_NAMA = $rows['P_NAMA'];
+                        $P_EMAIL = $rows['P_EMAIL'];          
+                        $P_TELP = $rows['P_TELP'];
+                        $P_JENISKELAMIN = $rows['P_JENISKELAMIN'];
+                        $P_ALAMAT = $rows['P_ALAMAT'];
+                        $P_GAJI = $rows['P_GAJI'];
+                        $P_JABATAN = $rows['P_JABATAN'];
+                      echo "    <tr>
+                                <td> $P_ID </td>
+                                <td> $P_NAMA</td>
+                                <td> $P_EMAIL</td>
+                                <td>$P_TELP </td>
+                                <td> $P_JENISKELAMIN</td>
+                                <td> $P_ALAMAT</td> 
+                                <td>  $P_GAJI</td> 
+                                <td>   $P_JABATAN</td> 
+                               </tr>";
+
+
+                      }
+                    }else{
+                      echo "tidak ada hasil";
+                    }     
+
+          ?>
+
+
     </tbody>
   </table>
   </div>
 </div>
 
-<?php
-          include '../Database/connect.php';
-           $sql = "SELECT * FROM pegawai ";
-          $hasil = mysqli_query($sqlconnect,$sql);
+ <div class="container" style="margin-top: 130px;" >
+  <h2>Menampilkan nama pegawai bagian kasir yang memberikan pelayanan diskon, nama pelanggan dan harga setelah mendapatkan diskon(tanpa pajak)</h2>                                                                                   
+  <div class="table-responsive" >          
+  <table id="myTable" class="table display table-striped table-hover table-sm table-bordered">
+    <thead class="thead-light ">
+      <tr>
 
-          if($hasil->num_rows != 0){
+        <th>Nama Pegawai</th>
+        <th>Nama Pelanggan</th>
+        <th>Nama Diskon</th>
+         <th>Harga</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+              
+          <?php
+                    include '../Database/connect.php';
+                     $sql = "
+                       SELECT p.`P_NAMA` AS pegawai, pe.`PE_NAMA` AS pelanggan ,d.`D_NAMA` as Diskon ,ROUND(SUM(me.`M_HARGA`)*(1-d.`D_BESARDISKON`) ) AS harga
+                        FROM transaksi t JOIN diskon d ON t.`D_ID` = d.`D_ID`
+                        JOIN melayani m ON m.`T_ID` = t.`T_ID`
+                        JOIN pegawai p ON p.`P_ID` = m.`P_ID` AND p.`P_JABATAN` = 'kasir'
+                        JOIN detil_transaksi dt ON dt.`T_ID` = t.`T_ID`
+                        JOIN menu me ON me.`M_ID` = dt.`M_ID`
+                        JOIN pelanggan pe ON pe.`PE_ID` = t.`PE_ID`
+                        GROUP BY  p.`P_NAMA`, p.`P_JABATAN` , pe.`PE_NAMA`
+                         
+                            ";
+                    $hasil = mysqli_query($sqlconnect,$sql);
 
-            while ($rows = $hasil->fetch_assoc()) {
-              $nama = $rows['NAMA'];
-              $GAMBAR = $rows['GAMBAR'];
-              $link = $rows['LINK'];
-            echo "    <li>
-                  <a href='pMi/$link'>
-                  <img class='pap' src='pMi/Minuman/$GAMBAR' alt='makanan' height='100px' width='200px'>
-                  <div class='tes1'></div>
-                  <div class='tes2'></div>
-                  <div class='tes3'></div>  
-                  <div class='tes4'>
-                    <h2>$nama</h2>
-                  </div> 
-                  </a>
-                  </li>";
+                    if($hasil->num_rows != 0){
 
-            }
-          }else{
-            echo "tidak ada hasil";
-          }     
+                      while ($rows = $hasil->fetch_assoc()) {
+                        $P_NAMA = $rows['pegawai'];
+                        $pelanggan = $rows['pelanggan'];
+                        $diskon = $rows['Diskon'];
+                        $harga = $rows['harga'];
+                      echo "    <tr>
+                   
+                                <td> $P_NAMA</td>
+                                <td>    $pelanggan</td> 
+                                <td>   $diskon</td> 
+                                <td>  $harga</td> 
+                               </tr>";
 
-?>
+
+                      }
+                    }else{
+                      echo "tidak ada hasil";
+                    }     
+
+                    mysqli_close($sqlconnect);
+
+          ?>
+
+
+    </tbody>
+  </table>
+  </div>
+</div>
+ 
+    
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -160,6 +215,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="../js/agency.min.js"></script>
+
+  
 
   </body>
 

@@ -57,36 +57,64 @@
       </div>
     </nav>
 
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default navbar-fixed-top my-navbar" style="margin-bottom: 0px; z-index: 5">
-  <a class="navbar-brand" href="#">HelpYow</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="container" style="margin-top: 130px;" >
+  <h2>Pelanggan</h2>                                                                                   
+  <div class="table-responsive" >          
+  <table id="myTable" class="table display table-striped table-hover table-sm table-bordered">
+    <thead class="thead-light ">
+      <tr>
+        <th>PE_ID</th>
+        <th>PE_NAMA</th>
+        <th>PE_JENISKELAMINL</th>
+        <th>PE_TGLLAHIR</th>
+        <th>PE_ALAMAT</th>
+        <th>PE_TELP</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+              
+          <?php
+                    include '../Database/connect.php';
+                     $sql = "SELECT * FROM pelanggan order by PE_ID ";
+                    $hasil = mysqli_query($sqlconnect,$sql);
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cleaner</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Technician</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Join Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
-      </li>
-    </ul>
-{{--     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" placeholder="Search" type="text">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form> --}}
+                    if($hasil->num_rows != 0){
+
+                      while ($rows = $hasil->fetch_assoc()) {
+                        $PE_ID = $rows['PE_ID'];
+                        $PE_NAMA = $rows['PE_NAMA'];
+                        $PE_JENISKELAMIN = $rows['PE_JENISKELAMIN'];
+                        $PE_TGL = $rows['PE_TGLLAHIR'];      
+                        $PE_ALAMAT = $rows['PE_ALAMAT'];
+                        $PE_TELP = $rows['PE_TELP'];
+    
+                      echo "    <tr>
+                                <td> $PE_ID </td>
+                                <td> $PE_NAMA</td>
+                                <td> $PE_JENISKELAMIN</td>                                 
+                                <td>  $PE_TGL</td>                                        
+                                <td> $PE_ALAMAT</td>                  
+                                <td>$PE_TELP </td>
+
+
+
+ 
+                               </tr>";
+
+
+                      }
+                    }else{
+                      echo "tidak ada hasil";
+                    }     
+
+          ?>
+
+
+    </tbody>
+  </table>
   </div>
-</nav>
-
-  -->
+</div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
