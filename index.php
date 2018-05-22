@@ -38,19 +38,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">MENU</a>
+              <a class="nav-link js-scroll-trigger" href="#">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="Page/pegawai.php">PEGAWAI</a>
+              <a class="nav-link js-scroll-trigger" href="#">PEGAWAI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="Page/pelanggan.php">PELANGGAN</a>
+              <a class="nav-link js-scroll-trigger" href="#">PELANGGAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">TEAM</a>
+              <a class="nav-link js-scroll-trigger" href="#">MENU</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="# ">OBJECT DATABASE</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/pegawai.php">Pegawai</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/Pelanggan.php">Pelanggan</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/melayani.php">Melayani</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/menu.php">Menu</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/transaksi.php">Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/detil_transaksi.php">Detil Transaksi</a></li>
+               </ul>
             </li>
           </ul>
         </div>

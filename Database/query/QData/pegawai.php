@@ -58,20 +58,29 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../index.php">MENU</a>
+              <a class="nav-link js-scroll-trigger" href="../index.php">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="pegawai.php">PEGAWAI</a>
+              <a class="nav-link js-scroll-trigger active" href="pegawai.php">PEGAWAI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="pelanggan.php">PELANGGAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">TEAM</a>
+              <a class="nav-link js-scroll-trigger" href="#team">MENU</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="# ">OBJECT DATABASE</a>
+                        <li class="nav-item dropdown">
+              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Pegawai</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Pelanggan</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Melayani</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Menu</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="#">Detil Transaksi</a></li>
+               </ul>
             </li>
+
           </ul>
         </div>
       </div>
@@ -95,7 +104,6 @@
       </tr>
     </thead>
     <tbody>
-     
               
           <?php
                     include '../Database/connect.php';
