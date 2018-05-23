@@ -1,6 +1,6 @@
 <?php
       require( '../../connect.php');
-       $sql = "SELECT M_NAMA, M_HARGA FROM menu where M_ID = 'MI%'";
+       $sql = "SELECT M_NAMA, M_HARGA FROM menu where M_JENIS = 'Minuman'";
       $hasil = mysqli_query($sqlconnect,$sql);
 
       if($hasil->num_rows != 0){
