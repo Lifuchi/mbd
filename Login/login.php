@@ -33,6 +33,14 @@
 
     <body>
 
+        <?php
+          session_start();
+          if(isset($_SESSION['login'])){
+              header("Location:../Page/admin.php");
+              exit();
+          }
+        ?>
+
         <!-- Top content -->
         <div class="top-content">
         	
@@ -55,7 +63,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
+			                    <form role="form" action="cek_login.php" method="post" class="login-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
 			                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
