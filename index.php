@@ -41,16 +41,16 @@
               <a class="nav-link js-scroll-trigger" href="#services">MENU</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">TEAM</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="Page/pegawai.php">PEGAWAI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="Page/pelanggan.php">PELANGGAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">TEAM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="# ">OBJECT DATABASE</a>
+              <a class="nav-link js-scroll-trigger" href="Login/login.php ">LOGIN</a>
             </li>
           </ul>
         </div>
@@ -80,24 +80,31 @@
         <div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
+              <a href="Page/makanan.php">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+
+              <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+              </a>
             </span>
             <h4 class="service-heading">Makanan</h4>
             <p class="text-muted">Berbagai macam makanan dengan khas rasa Indonesia</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
+              <a href="Page/minuman.php">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
+              </a>
             </span>
             <h4 class="service-heading">Minuman</h4>
             <p class="text-muted">Aneka minuman kesegaran yang dapat dirasakan</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
+              <a href="Page/snack.php">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+              </a>
             </span>
             <h4 class="service-heading">Snack</h4>
             <p class="text-muted">Jajanan ringan yang dapat dimakan bersama teman maupun keluarga</p>
@@ -106,12 +113,6 @@
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
-
-
-    <!-- About -->
-  
-    <!-- Team -->
     <section class="bg-light" id="team">
       <div class="container">
         <div class="row">
@@ -123,17 +124,17 @@
         <div class="row ">
           <div class="col-sm-6 ">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-              <h4>Fadilla Sukma</h4>
+              <img class="mx-auto rounded-circle" src="img/team/fadilla.jpg" alt="">
+              <h4>Fadilla Sukma Alfiani</h4>
               <p class="text-muted"></p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a href="https://instagram.com/fadillasa">
+                    <i class="fa fa-instagram"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://facebook.com/fadillasukmaalfiani">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -151,11 +152,11 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://facebook.com/Yatogami.Risa">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -180,18 +181,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <span class="copyright">Copyright &copy; Your Website 2018</span>
+            <span class="copyright">Copyright &copy; Restoran Website 2018</span>
           </div>
-               <div class="col-md-9">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-            </ul>
-          </div>
+               
         </div>
       </div>
     </footer>
