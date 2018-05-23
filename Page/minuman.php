@@ -21,16 +21,23 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="../css/agency.min.css" rel="stylesheet">
+    <link href="../css/agency.css" rel="stylesheet">
+
+    <!-- datables -->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+
 
   </head>
 
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="../index.php">Restoran</a>
+        <a class="navbar-brand js-scroll-trigger" href="../home.php#page-top">Restoran</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -38,30 +45,68 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../index.php#services">MENU</a>
+              <a class="nav-link js-scroll-trigger" href="../home.php#services">MENU</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../index.php#team">TEAM</a>
+              <a class="nav-link js-scroll-trigger" href="../home.php#team">TEAM</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">PELANGGAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="pegawai.php">PEGAWAI</a>
+              <a class="nav-link js-scroll-trigger" href="#">MENU</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data <span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/pegawai.php">Pegawai</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/Pelanggan.php">Pelanggan</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/melayani.php">Melayani</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/menu.php">Menu</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/transaksi.php">Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/detil_transaksi.php">Detil Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Data/diskon.php">diskon</a></li>                  
+               </ul>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../logout.php ">LOGOUT</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="pelanggan.php">PELANGGAN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../Login/login.php">LOGIN</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    
+<div class="container" style="margin-top: 100px;" >
+  <h2>Minuman</h2>                                                                                   
+  <div >          
+  <table id="my-example">
+    <thead >
+      <tr>
+        <th>M_NAMA</th>
+        <th>M_HARGA</th>
+      </tr>
+    </thead>
 
-   <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../endor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": "../../Database/query/QData/minuman.php",
+        "aoColumns": [
+              { mData: 'M_NAMA' },
+              { mData: 'M_HARGA' }
+            ]
+      });  
+  });
+</script>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>

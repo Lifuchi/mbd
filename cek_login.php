@@ -1,5 +1,5 @@
 <?php 
- 	include '../Database/connect.php';
+ 	include 'Database/connect.php';
 	session_start();
 
 	$username = $_POST['form-username'];
@@ -22,11 +22,11 @@
 							$_SESSION['username'] = $username;
 							$_SESSION['login'] = $username;
 							$_SESSION['status'] = "login";
-							header("location:../index.php");
+							header("location:home.php");
 				}else{
 					echo "<script type='text/javascript'>alert('Username/Password salah')</script>";
 					//saya tes mengganti
-					header("location:login.php");
+					//header("location:index.php");
 				}
 	}
 }

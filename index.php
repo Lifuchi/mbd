@@ -1,237 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Restoran</title>
 
-    <title>Restoran</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    </head>
 
-  </head>
+    <body>
 
-  <body id="page-top">
+        <?php
+          session_start();
+          if(isset($_SESSION['login'])){
+              header("Location: home.php");
+              exit();
+          }
+        ?>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Restoran</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">PEGAWAI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">PELANGGAN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">MENU</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/pegawai.php">Pegawai</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/Pelanggan.php">Pelanggan</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/melayani.php">Melayani</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/menu.php">Menu</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/transaksi.php">Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/detil_transaksi.php">Detil Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/diskon.php">Diskon</a></li>
-               </ul>
-              <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="Login/login.php ">LOGIN</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Selamat Datang di Restoran!</div>
-          <div class="intro-heading text-uppercase"></div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Menu</h2>
-            <h3 class="section-subheading text-muted"></h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <a href="Page/makanan.php">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-
-              <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
-              </a>
-            </span>
-            <h4 class="service-heading">Makanan</h4>
-            <p class="text-muted">Berbagai macam makanan dengan khas rasa Indonesia</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <a href="Page/minuman.php">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
-              </a>
-            </span>
-            <h4 class="service-heading">Minuman</h4>
-            <p class="text-muted">Aneka minuman kesegaran yang dapat dirasakan</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <a href="Page/snack.php">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-              </a>
-            </span>
-            <h4 class="service-heading">Snack</h4>
-            <p class="text-muted">Jajanan ringan yang dapat dimakan bersama teman maupun keluarga</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-light" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Team kami</h2>
-            <h3 class="section-subheading text-muted"></h3>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col-sm-6 ">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/fadilla.jpg" alt="">
-              <h4>Fadilla Sukma Alfiani</h4>
-              <p class="text-muted"></p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="https://instagram.com/fadillasa">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://facebook.com/fadillasukmaalfiani">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-              
-                </li>
-              </ul>
+        <!-- Top content -->
+        <div class="top-content">
+            
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Restoran</strong> Login Form</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Login to our site</h3>
+                                    <p>Masukkan username dan password untuk login:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="cek_login.php" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                    </div>
+                                    <button type="submit" name="login" value="Log in" class="btn">Login</button>
+                                </form>
+                            </div>
+                            <!-- <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <h3>Kembali ke home?</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-2" href="../index.php">
+                                    <i class="fa fa-home"></i> Restoran
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-              <h4>Rifka Annisa</h4>
-              <p class="text-muted"></p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://facebook.com/Yatogami.Risa">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                </li>
-              </ul>
-            </div>
-          </div>
+            
         </div>
-       
-      </div>
-    </section>
 
-    <!-- Clients -->
-  
 
-    <!-- Contact -->
- 
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <span class="copyright">Copyright &copy; Restoran Website 2018</span>
-          </div>
-               
-        </div>
-      </div>
-    </footer>
-
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-   
-
-    <!-- Modal 2 -->
-  
-
-    <!-- Modal 3 -->
-  
-
-    <!-- Modal 4 -->
-  
-
-    <!-- Modal 5 -->
-  
-    <!-- Modal 6 -->
- 
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
-
-  </body>
+    </body>
 
 </html>

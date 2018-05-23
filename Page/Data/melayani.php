@@ -37,27 +37,27 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Restoran</a>
+        <a class="navbar-brand js-scroll-trigger" href="../../home.php#page-top">Restoran</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../../index.php">HOME</a>
+           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../../home.php#services">MENU</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">PEGAWAI</a>
+              <a class="nav-link js-scroll-trigger" href="../../home.php#team">TEAM</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">PELANGGAN</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">MENU</a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
-              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
+              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data <span class="caret"></span></a>
                <ul class="dropdown-menu">
                   <li><a class="dropdown-item" style="font-size: 12px" href="pegawai.php">Pegawai</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="Pelanggan.php">Pelanggan</a></li>
@@ -68,7 +68,7 @@
                   <li><a class="dropdown-item" style="font-size: 12px" href="diskon.php">diskon</a></li>                  
                </ul>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../../Login/login.php ">LOGIN</a>
+              <a class="nav-link js-scroll-trigger" href="../../logout.php ">LOGOUT</a>
             </li>
             </li>
           </ul>
