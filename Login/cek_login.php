@@ -9,7 +9,7 @@
 	// pass: resto2018
 	if(isset($_POST['login'])){
 			if(isset($_POST['form-username'])){
-					if( $username=='admin' and  $password='a2fc965467755bdb9b82c7fa9c28e79c' ){
+					if( $username=='admin' and  $password=='a2fc965467755bdb9b82c7fa9c28e79c' ){
 
 							
 							// if (!empty($_POST['remember'])) {
@@ -19,16 +19,16 @@
 							// 	setcookie("password",$password,time()+ (3600 * 24));
 							// }
 
-							echo " $username and $password ";
 							$_SESSION['username'] = $username;
 							$_SESSION['login'] = $username;
 							$_SESSION['status'] = "login";
 							header("location:../index.php");
 				}else{
 					echo "<script type='text/javascript'>alert('Username/Password salah')</script>";
-				header("location:../login.php");
+					
+					header("location:login.php");
 				}
-}
+	}
 }
 
 ?>
