@@ -95,7 +95,7 @@
   $(document).ready(function() {
       $('#my-example').dataTable({
         "bProcessing": true,
-        "sAjaxSource": "../../Database/query/QData/makanan.php",
+        "sAjaxSource": "../Database/query/QData/makanan.php",
         "aoColumns": [
               { mData: 'M_NAMA' },
               { mData: 'M_HARGA' }
