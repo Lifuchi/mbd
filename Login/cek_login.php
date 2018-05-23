@@ -1,13 +1,13 @@
 <?php 
- 	include 'connect.php';
+ 	include 'Database/connect.php';
  
-	$username = 'admin'
-	$password = 'a2fc965467755bdb9b82c7fa9c28e79c';
+	$username = $_POST['username'];
+	$password = md5($_POST['password']);
+
+	// user: admin 
+	// pass: resto2018
 	 
-	$login = mysqli_query($conn, "SELECT * FROM login WHERE username='$username' AND password='$password'");
-	$cek = mysqli_num_rows($login);
-	 
-	if($cek == 1){
+	if("$username='admin' AND password='a2fc965467755bdb9b82c7fa9c28e79c'"){
 		session_start();
 
 		if (!empty($_POST['remember'])) {
@@ -20,7 +20,7 @@
 		$_SESSION['username'] = $username;
 		$_SESSION['login'] = $username;
 		$_SESSION['status'] = "login";
-		header("location:Page/admin.php");
+		header("location:../Page/admin.php");
 		
 	}else{
 		echo "<script type='text/javascript'>alert('Username/Password salah')</script>";

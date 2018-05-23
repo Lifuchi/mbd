@@ -50,7 +50,7 @@
               <a class="nav-link js-scroll-trigger" href="pelanggan.php">PELANGGAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="# ">LOGIN</a>
+              <a class="nav-link js-scroll-trigger" href="../Login/login.php">LOGIN</a>
             </li>
           </ul>
         </div>
