@@ -58,7 +58,7 @@
                   <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/menu.php">Menu</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/transaksi.php">Transaksi</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/detil_transaksi.php">Detil Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/detil_transaksi.php">Diskon</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/diskon.php">Diskon</a></li>
                </ul>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="Login/login.php ">LOGIN</a>
