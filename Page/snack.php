@@ -34,6 +34,15 @@
 
   <body id="page-top">
 
+    <?php 
+      session_start();
+       if(isset($_SESSION['login'])){
+       }else if(empty($_SESSION['login'])){
+        header("Location: ../index.php");
+        exit();
+       }
+    ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
@@ -95,7 +104,7 @@
   $(document).ready(function() {
       $('#my-example').dataTable({
         "bProcessing": true,
-        "sAjaxSource": "../../Database/query/QData/snack.php",
+        "sAjaxSource": "../Database/query/QData/snack.php",
         "aoColumns": [
               { mData: 'M_NAMA' },
               { mData: 'M_HARGA' }

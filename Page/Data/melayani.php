@@ -34,6 +34,15 @@
 
   <body id="page-top">
 
+    <?php 
+      session_start();
+       if(isset($_SESSION['login'])){
+       }else if(empty($_SESSION['login'])){
+        header("Location: ../../index.php");
+        exit();
+       }
+    ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
