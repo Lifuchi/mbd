@@ -1,7 +1,7 @@
 
 <?php
       require( '../../connect.php');
-       $sql = "SELECT * FROM pelanggan ";
+       $sql = "SELECT * FROM diskon";
       $hasil = mysqli_query($sqlconnect,$sql);
 
       if($hasil->num_rows != 0){

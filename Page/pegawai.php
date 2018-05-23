@@ -11,24 +11,24 @@
     <title>Restoran</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../css/agency.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="../index.php">Restoran</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,29 +38,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-<<<<<<< HEAD:Page/Data/detil_transaksi.php
-              <a class="nav-link js-scroll-trigger" href="../../index.php">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">PEGAWAI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">PELANGGAN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">MENU</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" style="font-size: 12px" href="pegawai.php">Pegawai</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Pelanggan.php">Pelanggan</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="melayani.php">Melayani</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="menu.php">Menu</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="transaksi.php">Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="detil_transaksi.php">Detil Transaksi</a></li>
-               </ul>
-=======
               <a class="nav-link js-scroll-trigger" href="../index.php#services">MENU</a>
             </li>
             <li class="nav-item">
@@ -74,14 +51,42 @@
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="# ">LOGIN</a>
->>>>>>> master:Page/Pelanggan.php
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default navbar-fixed-top my-navbar" style="margin-bottom: 0px; z-index: 5">
+  <a class="navbar-brand" href="#">HelpYow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cleaner</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Technician</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Join Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+{{--     <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" placeholder="Search" type="text">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form> --}}
+  </div>
+</nav>
+
+  -->
 
   <div class="container">
   <h2>Table</h2>
@@ -143,18 +148,18 @@
 ?>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../endor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="../../js/jqBootstrapValidation.js"></script>
-    <script src="../../js/contact_me.js"></script>
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="../../js/agency.min.js"></script>
+    <script src="../js/agency.min.js"></script>
 
   </body>
 
