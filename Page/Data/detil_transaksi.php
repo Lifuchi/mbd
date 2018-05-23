@@ -23,6 +23,13 @@
     <!-- Custom styles for this template -->
     <link href="../../css/agency.css" rel="stylesheet">
 
+    <!-- datables -->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+
+
   </head>
 
   <body id="page-top">
@@ -30,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="../index.php">Restoran</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Restoran</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -38,7 +45,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-<<<<<<< HEAD:Page/Data/detil_transaksi.php
               <a class="nav-link js-scroll-trigger" href="../../index.php">HOME</a>
             </li>
             <li class="nav-item">
@@ -59,91 +65,46 @@
                   <li><a class="dropdown-item" style="font-size: 12px" href="menu.php">Menu</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="transaksi.php">Transaksi</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="detil_transaksi.php">Detil Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="diskon.php">diskon</a></li>                  
                </ul>
-=======
-              <a class="nav-link js-scroll-trigger" href="../index.php#services">MENU</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../index.php#team">TEAM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="pegawai.php">PEGAWAI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="pelanggan.php">PELANGGAN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="# ">LOGIN</a>
->>>>>>> master:Page/Pelanggan.php
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-
-
-  <div class="container">
-  <h2>Table</h2>
-  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
+<div class="container" style="margin-top: 100px;" >
+  <h2>Detil Transaksi</h2>                                                                                   
+  <div >          
+  <table id="my-example">
+    <thead >
       <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
+        <th>T_ID</th>
+        <th>M_ID</th>
+        <th>DT_JUMLAH</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-      </tr>
-    </tbody>
+
   </table>
   </div>
 </div>
 
-<?php
-          include '../Database/connect.php';
-           $sql = "SELECT * FROM pegawai ";
-          $hasil = mysqli_query($sqlconnect,$sql);
-
-          if($hasil->num_rows != 0){
-
-            while ($rows = $hasil->fetch_assoc()) {
-              $nama = $rows['NAMA'];
-              $GAMBAR = $rows['GAMBAR'];
-              $link = $rows['LINK'];
-            echo "    <li>
-                  <a href='pMi/$link'>
-                  <img class='pap' src='pMi/Minuman/$GAMBAR' alt='makanan' height='100px' width='200px'>
-                  <div class='tes1'></div>
-                  <div class='tes2'></div>
-                  <div class='tes3'></div>  
-                  <div class='tes4'>
-                    <h2>$nama</h2>
-                  </div> 
-                  </a>
-                  </li>";
-
-            }
-          }else{
-            echo "tidak ada hasil";
-          }     
-
-?>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": "../../Database/query/QData/detil_transaksi.php",
+        "aoColumns": [
+              { mData: 'T_ID' } ,
+              { mData: 'M_ID' },
+              { mData: 'DT_JUMLAH'}
+            ]
+      });  
+  });
+</script>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
