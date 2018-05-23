@@ -67,6 +67,9 @@
                   <li><a class="dropdown-item" style="font-size: 12px" href="detil_transaksi.php">Detil Transaksi</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="diskon.php">diskon</a></li>                  
                </ul>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../../Login/login.php ">LOGIN</a>
+            </li>
             </li>
           </ul>
         </div>
