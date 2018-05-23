@@ -33,14 +33,6 @@
 
     <body>
 
-        <?php
-          session_start();
-          if(isset($_SESSION['login'])){
-              header("Location:../Page/admin.php");
-              exit();
-          }
-        ?>
-
         <!-- Top content -->
         <div class="top-content">
         	
