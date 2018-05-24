@@ -700,3 +700,128 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
 }
+
+.milih{
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+
+}
+
+.milih ul{  
+  width: 100%;
+
+}
+.milih ul li{
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  float: left;
+  position: relative; 
+  overflow: hidden; 
+  transition: all .5 ease;
+  overflow: hidden;
+   list-style : none;
+  box-shadow: 1px 1px 3px 1px black ;
+}
+
+
+.milih ul li img {
+  float: left;
+  width: 200px;
+  height: 150px;   
+}
+
+
+.tes1{  
+  width: 400px;
+  height: 200px;  
+  position: absolute;
+  background: rgba(157, 91, 44,0.5);
+  transform: rotate(10deg);
+  color: blue;
+  margin-top: 100px;
+  margin-left: -200px;
+  transition: all 650ms;
+
+}
+
+.tes2{
+  
+  width: 400px;
+  height: 200px;  
+  position: absolute;
+  background: rgba(157, 91, 44,0.5);
+  transform: rotate(100deg);
+  margin-top: 200px;
+  margin-left: -300px;
+  transition: all 750ms;
+
+}
+
+.tes3{
+  
+  width: 400px;
+  height: 200px;  
+  position: absolute;
+  background: rgba(157, 91, 44,0.5);
+  transform: rotate(80deg);
+  margin-top: 200px;
+  margin-left: -235px;
+  transition: all 450ms;
+  
+}
+
+.tes4{
+  
+  width: 400px;
+  height: 200px;  
+  position: absolute;
+  background: rgba(157, 91, 44,0.7);
+  transform: rotate(30deg);
+  margin-top: 100px;
+  margin-left: -220px;
+  color: white;
+  box-shadow: 0px 1px 5px 1px black;
+  transition: all 750ms;
+  
+}
+
+.milih ul li:hover .tes1{
+  width: 150%;
+  transition: all 350ms;
+  background: rgba(0, 0, 0,0.5);
+}
+
+.milih ul li:hover .tes2{
+  width: 200%;
+  transition: all 450ms;
+  background: rgba(0, 0, 0,0.5);
+}
+
+.milih ul li:hover .tes3{
+  width: 210%;
+  transition: all 850ms;
+  background: rgba(0, 0, 0,0.5);
+}
+
+.milih ul li:hover .tes4{
+  width: 300%;
+  transition: all 650ms;
+  background: rgba(0, 0, 0,0.5);
+}
+
+.milih ul li h2 {
+  opacity: 0;
+  transform: rotate(-30deg);
+  font-size: 14px;
+  color: white;
+  transition: all 580ms;
+  padding-right: 90px;
+}
+
+.milih ul li:hover h2 {
+  opacity: 1;
+  transition: all 580ms;
+
+}

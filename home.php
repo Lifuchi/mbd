@@ -121,7 +121,15 @@
             <p class="text-muted">Jajanan ringan yang dapat dinikmati bersama teman maupun keluarga</p>
           </div>
         </div>
+        <div class="row text-center" >
+          <div class="col-lg-12 text-center">
+            <div class="intro-heading text-uppercase" style="top: 20px"></div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Rview.php">Menu Favorit Lainnya</a>
+          </div>
+        </div>
+
       </div>
+
     </section>
 
     <section class="bg-light" id="team">
@@ -176,6 +184,11 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div class="row text-center" >
+          <div class="col-lg-12 text-center">
+            <div class="intro-heading text-uppercase" style="top: 20px"></div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Kinerja Pegawai</a>
         </div>
        
       </div>
