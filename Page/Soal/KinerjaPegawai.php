@@ -68,13 +68,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data <span class="caret"></span></a>
                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" style="font-size: 12px" href="pegawai.php">Pegawai</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Pelanggan.php">Pelanggan</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="melayani.php">Melayani</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="menu.php">Menu</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="transaksi.php">Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="detil_transaksi.php">Detil Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="diskon.php">diskon</a></li>                  
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/pegawai.php">Pegawai</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/Pelanggan.php">Pelanggan</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/melayani.php">Melayani</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/menu.php">Menu</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/transaksi.php">Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/detil_transaksi.php">Detil Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/diskon.php">diskon</a></li>                  
                </ul>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../logout.php ">LOGOUT</a>
@@ -85,43 +85,54 @@
       </div>
     </nav>
 
-  <div class="container" style="margin-top: 100px;">
-    <div class="row">
-            <form action="Database/query/Soal/Rview.php">
-                <div class="row" style="margin : 10px">
-                      <div class="col-md-4 " style="padding: 50px;">
-                          <select id='gMonth'>
-                          <option value=''>--Select Month--</option>
-                          <option value='1'>Janaury</option>
-                          <option value='2'>February</option>
-                          <option value='3'>March</option>
-                          <option value='4'>April</option>
-                          <option value='5'>May</option>
-                          <option value='6'>June</option>
-                          <option value='7'>July</option>
-                          <option value='8'>August</option>
-                          <option value='9'>September</option>
-                          <option value='10'>October</option>
-                          <option value='11'>November</option>
-                          <option value='12'>December</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 " style="padding: 50px;">
-                          <select id='gYears'>
-                          <option value=''>--Select Year--</option>
-                          <option value='2017'>2017</option>
-                          <option value='2018'>2018</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 " style="padding: 50px;">
-                            <button class="col-sm-6 btn btn-primary btn-block" id="submit" name="submit">find</button>
-                        </div>
-              </div>
-            </form>
+
+  <section class="bg-light">
+    <h3  class="text-center">PUNYA FADILLA YANG GAJI PEGAWAI ditambah , TERSERAH DESAIN GIMANA</h3>
+
+  </section>
+
+  <section>
+    <h3 class="text-center">PUNYA Rifka YANG GAJI PEGAWAI dikurang , TERSERAH DESAIN GIMANA</h3>
+
+  </section>
+
+<!-- SOAL JOIN -->
+  <section class="bg-light">
+    <div class="container">
+     <h3 class="text-center text-uppercase">kasir yang memberikan pelayanan diskon</h3>
+      <div >          
+          <table id="my-example" class="table table-hover">
+            <thead >
+              <tr>
+                <th>Nama Pegawai</th>
+                <th>Nama Pelanggan</th>
+                <th>Diskon</th>
+                <th>Harga(tanpa pajak)</th>
+              </tr>
+            </thead>
+
+          </table>
     </div>
-  </div>
+    </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "sAjaxSource": "../../Database/query/Soal/Rjoin.php",
+        "aoColumns": [
+              { mData: 'pegawai' } ,
+              { mData: 'pelanggan' },
+              { mData: 'Diskon' },
+              { mData: 'harga' }
+            ]
+      });  
+  });
+</script>
 
 
+ </div>
+
+  </section>
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

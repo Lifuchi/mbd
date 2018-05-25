@@ -80,7 +80,7 @@
     </header>
 
     <!-- Services -->
-    <section id="services">
+    <section id="services " class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -129,7 +129,58 @@
         </div>
 
       </div>
+    </section>
 
+       <section id="services" class="bg-dark">
+     <!--  <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Pelanggan</h2>
+            <h3 class="section-subheading text-muted">Terima kasih atas kesetiaan ANDA</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Finish</h4>
+              <p class="text-muted">Identity</p>
+            </div>
+          </div>
+        <div class="row text-center" >
+          <div class="col-lg-12 text-center">
+            <div class="intro-heading text-uppercase" style="top: 20px"></div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Rview.php">Pembayaran</a>
+          </div>
+        </div>
+
+      </div> -->
+          <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Pelanggan</h2>
+            <h3 class="section-subheading text-muted">Terima kasih atas kesetiaan ANDA</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-6  portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3" style="font-size: 20px">
+             <h2>Pembayaran</h2>
+            </a>
+          </div>
+          <div class="col-sm-6  portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4" style="font-size: 20px">
+             <h2>Special Diskon</h2>
+            </a>
+          </div>
+          
+      </div>
     </section>
 
     <section class="bg-light" id="team">
@@ -188,7 +239,7 @@
         <div class="row text-center" >
           <div class="col-lg-12 text-center">
             <div class="intro-heading text-uppercase" style="top: 20px"></div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Kinerja Pegawai</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/KinerjaPegawai.php">Kinerja Pegawai</a>
         </div>
        
       </div>
@@ -214,8 +265,68 @@
 
     <!-- Portfolio Modals -->
 
-    <!-- Modal 1 -->
-   
+<!-- Pembayaran FUNCTION-->
+  <!-- Modal 3 -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--   <script>
+ 
+function loaddata()
+{
+     var name=document.getElementById( "username" );
+    if(name)
+    {
+     $.ajax({
+      type: 'get',
+      url : 'Database/query/Soal/RFunction.php' , 
+      data : {
+          user_name:name,
+        },
+      success: function(response){
+       $('#response').text('name : ' + response);
+             }
+         });
+       });
+  });
+}
+}
+  </script>  -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2 class="text-uppercase">Pembayaran</h2>        
+                  <p class="text-muted">Masukkan Nomer Transaksi</p>
+
+<!-- action='Database/query/Soal/RFunction.php' -->
+
+    <section class="mencari">
+        <form method="GET" action='Database/query/Soal/RFunction.php' >
+            <input onkeyup="loaddata();" id="username" class="inp" type="text" name="username" placeholder="search">
+            <button  id="submitId" type="submitId " name="submit-search" > search </button>
+            <div id="response"></div>
+        </form>
+    </section>
+
+<!--                 <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+
 
     <!-- Modal 2 -->
   
@@ -224,6 +335,42 @@
   
 
     <!-- Modal 4 -->
+
+<!-- punya fadhilla yang diskon -->
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Lines</li>
+                    <li>Category: Branding</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   
 
     <!-- Modal 5 -->

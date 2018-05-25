@@ -43,7 +43,6 @@
        }
     ?>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="../../home.php#page-top">Restoran</a>
@@ -68,13 +67,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data <span class="caret"></span></a>
                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" style="font-size: 12px" href="pegawai.php">Pegawai</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="Pelanggan.php">Pelanggan</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="melayani.php">Melayani</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="menu.php">Menu</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="transaksi.php">Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="detil_transaksi.php">Detil Transaksi</a></li>
-                  <li><a class="dropdown-item" style="font-size: 12px" href="diskon.php">diskon</a></li>                  
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/pegawai.php">Pegawai</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/Pelanggan.php">Pelanggan</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/melayani.php">Melayani</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/menu.php">Menu</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/transaksi.php">Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/detil_transaksi.php">Detil Transaksi</a></li>
+                  <li><a class="dropdown-item" style="font-size: 12px" href="../Data/diskon.php">diskon</a></li>                  
                </ul>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../logout.php ">LOGOUT</a>
@@ -85,9 +84,9 @@
       </div>
     </nav>
 
-  
-
-  <div class="container" style="margin-top: 100px;">
+<div class="text-center" style="margin-top: 100px;"><h2>Menu yg dipesan</h2></div>
+<section class="milih">
+  <div class="container" >
     <div class="row">
             <form action="Rview.php">
                 <div class="row" style="margin : 10px">
@@ -122,8 +121,6 @@
             </form>
     </div>
   </div>
-  <div class="text-center"><h2>Menu yg dipesan</h2></div>
-<section class="milih">
 
     <ul class="content-all" id="ca">
   <?php
