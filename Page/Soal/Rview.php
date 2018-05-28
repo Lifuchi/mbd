@@ -171,9 +171,19 @@ if(isset($_GET['submit'])){
             <h3 class="section-subheading text-muted"></h3>
           </div>
         </div>
-        <div class="container" style="margin-top: 100px;" >
-                                                                                  
-  <div >          
+
+<div class="row text-center" >
+  <div class="col-lg-12 text-center">
+    <div class="intro-heading text-uppercase" style="top: 100px"></div>
+       <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3" style="font-size: 20px">
+          <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Edit</button>
+        </a>
+    <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Hapus</button>
+  </div>
+</div>
+
+        <div class="container" style="margin-top: 100px;" >                                                                          
+  <div >        
   <table id="my-example">
     <thead >
       <tr>
@@ -183,28 +193,63 @@ if(isset($_GET['submit'])){
         <th>M_HARGA</th>
       </tr>
     </thead>
-
   </table>
   </div>
 </div>
 
 
+
 </section>
+
+
 
 <script type="text/javascript">
   $(document).ready(function() {
       $('#my-example').dataTable({
-        "bProcessing": true,
+        "bProcessing": true, 
+        "sPaginationType": "full_numbers",
         "sAjaxSource": "../../Database/query/QData/menu.php",
         "aoColumns": [
               { mData: 'M_ID' } ,
               { mData: 'M_NAMA' },
               { mData: 'M_JENIS' },
               { mData: 'M_HARGA' }
+
             ]
-      });  
+    });  
   });
 </script>
+
+
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2 class="text-uppercase">Edit</h2>        
+                  <p class="text-muted">Masukkan Nomer Menu dan Harga Baru</p>
+               <section class="mencari">
+                <form method="POST" action="../../Database/query/Soal/RTrigger.php" >
+                    <input id="menuid" class="inp" type="text" name="menuid" placeholder="M_ID">
+                    <input id="harga" class="inp" type="text" name="harga" placeholder="M_HARGA">
+                    <button  id="submit-search" type="submit" name="submit-search" > update </button>
+                    <div id="responses" class="responses"></div>
+                </form>
+              </section>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
 
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
