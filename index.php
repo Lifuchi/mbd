@@ -93,11 +93,14 @@
         </div>
 
 
-        <!-- Javascript -->
+        <!-- Javascript --> 
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
+
+        <!-- ajax -->
+
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
