@@ -84,11 +84,11 @@
       </div>
     </nav>
 
-<div class="text-center" style="margin-top: 100px;"><h2>Menu yg dipesan</h2></div>
+<div class="text-center" style="margin-top: 100px;"><h2>Total Pemasukan (tanpa pajak)</h2></div>
 <section class="milih">
   <div class="container" >
     <div class="row">
-            <form action="Rview.php">
+            <form action="Fview.php">
                 <div class="row" style="margin : 10px">
                       <div class="col-md-4 " >
                           <select id='gMonth' name="mselect">
@@ -124,39 +124,33 @@
 
     <ul class="content-all" id="ca">
   <?php
-if(isset($_GET['submit'])){
-      require( '../../Database/connect.php');
-      $tsearch = $_GET['tselect'];
-      $msearch = $_GET['mselect'] ;
-       $sql = "CREATE OR REPLACE VIEW nomer1 AS 
-        SELECT m.M_ID , m.M_NAMA 
-        FROM transaksi t JOIN detil_transaksi dt ON t.T_ID = dt.T_ID AND MONTH(t.T_TGLTRANSAKSI) = $msearch AND YEAR(t.T_TGLTRANSAKSI) = $tsearch
-        JOIN menu m ON m.M_ID = DT.M_ID; ";
-      
-      $hasils = mysqli_query($sqlconnect,$sql);
+    if(isset($_GET['submit'])){
+              require( '../../Database/connect.php');
+              $tsearch = $_GET['tselect'];
+              $msearch = $_GET['mselect'] ;
+               $sql = "CREATE OR REPLACE VIEW pemasukan AS 
+                SELECT SUM(CASE WHEN t.d_id IS NULL THEN dt.dt_jumlah*m.`M_HARGA` WHEN t.d_id IS NOT NULL THEN dt.dt_jumlah*m.`M_HARGA`*(1-d.d_besardiskon) ELSE 0 END) as income
+                FROM TRANSAKSI t
+                LEFT JOIN DISKON d ON t.`D_ID` = d.`D_ID`
+                LEFT JOIN DETIL_TRANSAKSI dt ON t.`T_ID` = dt.`T_ID`
+                AND MONTH(t.T_TGLTRANSAKSI) = $msearch AND YEAR(t.T_TGLTRANSAKSI) = $tsearch
+                LEFT JOIN MENU m ON dt.`M_ID` = m.`M_ID`;";
 
-      $sql = "SELECT distinct * from nomer1;";
+              $result = mysqli_query($sqlconnect,$sql);
 
-      $hasil = mysqli_query($sqlconnect,$sql);
-  
-      if($hasil->num_rows != 0){
+              $rowcount = $result->num_rows;
+              echo $rowcount;
 
-        while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-          $dataID = $row['M_ID'];
-          $dataNM = $row['M_NAMA'];
-          echo "<li>
-                  <img class='pap' src='../../img/menu/$dataID.jpg' alt='makanan' height='100px' width='200px'>
-                  <div class='tes1'></div>
-                  <div class='tes2'></div>
-                  <div class='tes3'></div>  
-                  <div class='tes4'><h2>$dataNM</h2></div> 
-                  </li>";
-          }     
-  }else {
-    echo "tidak ada hasil";
-  }   
-}
+              $rowcount = mysqli_num_rows($result);
+              echo $rowcount;
 
+                if (mysqli_num_rows($result) > 0 ){
+                    $row = $result->fetch_array(MYSQLI_NUM);
+                    echo $row[0];
+                }
+                else { echo "Tidak ada hasil";}
+              
+    }
  ?>
     </ul>
   </section>

@@ -84,80 +84,43 @@
       </div>
     </nav>
 
-<div class="text-center" style="margin-top: 100px;"><h2>Menu yg dipesan</h2></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="text-center" style="margin-top: 100px;"><h2>Total Transaksi yang telah dilayani Pegawai</h2></div>
 <section class="milih">
   <div class="container" >
     <div class="row">
-            <form action="Rview.php">
-                <div class="row" style="margin : 10px">
-                      <div class="col-md-4 " >
-                          <select id='gMonth' name="mselect">
-                          <option value=''>--Select Month--</option>
-                          <option value='1'>January</option>
-                          <option value='2'>February</option>
-                          <option value='3'>March</option>
-                          <option value='4'>April</option>
-                          <option value='5'>May</option>
-                          <option value='6'>June</option>
-                          <option value='7'>July</option>
-                          <option value='8'>August</option>
-                          <option value='9'>September</option>
-                          <option value='10'>October</option>
-                          <option value='11'>November</option>
-                          <option value='12'>December</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 ">
-                          <select id='gYears' name="tselect">
-                          <option value=''>--Select Year--</option>
-                          <option value='2017'>2017</option>
-                          <option value='2018'>2018</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 ">
-                            <input class="btn btn-primary " id="submit" name="submit" type="submit"></input>
-                        </div>
-              </div>
-            </form>
+        <form method="GET" action='Ffunction.php' >
+            <input onkeyup="loaddata();" id="username" class="inp" type="text" name="username" placeholder="search">
+            <button  id="submitId" type="submitId " name="submit-search" > Search </button>
+            <div id="response"></div>
+        </form>
     </div>
   </div>
 
     <ul class="content-all" id="ca">
-  <?php
-if(isset($_GET['submit'])){
-      require( '../../Database/connect.php');
-      $tsearch = $_GET['tselect'];
-      $msearch = $_GET['mselect'] ;
-       $sql = "CREATE OR REPLACE VIEW nomer1 AS 
-        SELECT m.M_ID , m.M_NAMA 
-        FROM transaksi t JOIN detil_transaksi dt ON t.T_ID = dt.T_ID AND MONTH(t.T_TGLTRANSAKSI) = $msearch AND YEAR(t.T_TGLTRANSAKSI) = $tsearch
-        JOIN menu m ON m.M_ID = DT.M_ID; ";
-      
-      $hasils = mysqli_query($sqlconnect,$sql);
+      <?php
+        if(isset($_GET['submit-search'])){
+            require( '../../connect.php');
+            $idpeg = $_GET['username'] ;
+          $sql = "SELECT DISTINCT peg_trans($idpeg) AS 'Jumlah Transaksi' FROM transaksi t;";
+          //belummm
 
-      $sql = "SELECT distinct * from nomer1;";
 
-      $hasil = mysqli_query($sqlconnect,$sql);
-  
-      if($hasil->num_rows != 0){
+          $hasil = mysqli_query($sqlconnect,$sql);
+              if($hasil->num_rows != 0){
 
-        while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-          $dataID = $row['M_ID'];
-          $dataNM = $row['M_NAMA'];
-          echo "<li>
-                  <img class='pap' src='../../img/menu/$dataID.jpg' alt='makanan' height='100px' width='200px'>
-                  <div class='tes1'></div>
-                  <div class='tes2'></div>
-                  <div class='tes3'></div>  
-                  <div class='tes4'><h2>$dataNM</h2></div> 
-                  </li>";
-          }     
-  }else {
-    echo "tidak ada hasil";
-  }   
-}
+                while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
+                  $data = $row['jumlah'];
+                   echo $row['jumlah']; 
 
- ?>
+                  }
+          }else{
+            echo "tidak ada"; 
+          }
+        }
+        ?>
     </ul>
   </section>
     <!-- Bootstrap core JavaScript -->
