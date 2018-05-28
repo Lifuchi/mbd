@@ -84,12 +84,14 @@
       </div>
     </nav>
 
-<div class="text-center" style="margin-top: 100px;"><h2>Menu yg dipesan</h2></div>
-<section class="milih">
+<!-- Rifka View -->
+
+<div class="text-center" style="margin-top: 130px;"><h2>Menu yang pernah dipesan</h2></div>
+<section class="milih" style="margin-top: -90px;"">
   <div class="container" >
     <div class="row">
             <form action="Rview.php">
-                <div class="row" style="margin : 10px">
+                <div class="row">
                       <div class="col-md-4 " >
                           <select id='gMonth' name="mselect">
                           <option value=''>--Select Month--</option>
@@ -160,6 +162,20 @@ if(isset($_GET['submit'])){
  ?>
     </ul>
   </section>
+
+<section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Menu</h2>
+            <h3 class="section-subheading text-muted"></h3>
+          </div>
+        </div>
+        
+    
+      </div>
+    </section>
+
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

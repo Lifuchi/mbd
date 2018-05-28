@@ -25,6 +25,15 @@
 
   </head>
 
+      <?php 
+      session_start();
+       if(isset($_SESSION['login'])){
+       }else if(empty($_SESSION['login'])){
+        header("Location: index.php");
+        exit();
+       }
+    ?>
+
   <body id="page-top">
 
     <!-- Navigation -->
@@ -50,7 +59,7 @@
               <a class="nav-link js-scroll-trigger" href="#">MENU</a>
             </li> -->
             <li class="nav-item dropdown">
-              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data <span class="caret"></span></a>
+              <a class="nav-link js-scroll-trigger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" href="# ">Data<span class="caret"></span></a>
                <ul class="dropdown-menu">
                   <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/pegawai.php">Pegawai</a></li>
                   <li><a class="dropdown-item" style="font-size: 12px" href="Page/Data/Pelanggan.php">Pelanggan</a></li>
@@ -80,7 +89,7 @@
     </header>
 
     <!-- Services -->
-    <section id="services " class="bg-light">
+    <section id="services" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -131,7 +140,7 @@
       </div>
     </section>
 
-       <section id="services" class="bg-dark">
+       <section id="service2" class="bg-dark">
      <!--  <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -268,7 +277,6 @@
 <!-- Pembayaran FUNCTION-->
   <!-- Modal 3 -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--   <script>
  
 function loaddata()
@@ -291,6 +299,7 @@ function loaddata()
 }
 }
   </script>  -->
+  <!-- <<?php // include('Database/query/Soal/RFunction.php'); ?> -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -307,18 +316,17 @@ function loaddata()
                   <p class="text-muted">Masukkan Nomer Transaksi</p>
 
 <!-- action='Database/query/Soal/RFunction.php' -->
-
-    <section class="mencari">
-        <form method="GET" action='Database/query/Soal/RFunction.php' >
-            <input onkeyup="loaddata();" id="username" class="inp" type="text" name="username" placeholder="search">
-            <button  id="submitId" type="submitId " name="submit-search" > search </button>
-            <div id="response"></div>
-        </form>
-    </section>
-
+               <section class="mencari">
+                <form >
+                    <input id="pelanggan" class="inp" type="text" name="pelanggan" placeholder="search">
+                    <button  id="submit-search" type="button" name="submit-search" > search </button>
+                    <div id="responses" class="responses"></div>
+                </form>
+              </section>
 <!--                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fa fa-times"></i>
                     Close Project</button> -->
+
                 </div>
               </div>
             </div>
@@ -327,6 +335,31 @@ function loaddata()
       </div>
     </div>   
 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>  
+        $(document).ready(function(){
+   
+         $(document).on('click', '#submit-search', function(){
+            
+           var name = $('#pelanggan').val();
+          // var comment = $('#comment').val(); 
+           $.ajax({
+            url: 'Database/query/Soal/RFunction.php',
+            type: 'POST',
+            data: {
+              'save': 1,
+              'name': name,
+            },
+            success: function(response){
+              // alert(name);
+              $('#pelanggan').val('');
+              $('#responses').html(response)
+            }
+
+          });
+         });
+        });
+    </script>
 
     <!-- Modal 2 -->
   
@@ -392,6 +425,9 @@ function loaddata()
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
 
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   </body>
 
 </html>
