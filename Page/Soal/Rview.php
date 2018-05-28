@@ -27,7 +27,7 @@
      <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 
   </head>
@@ -171,10 +171,40 @@ if(isset($_GET['submit'])){
             <h3 class="section-subheading text-muted"></h3>
           </div>
         </div>
-        
-    
-      </div>
-    </section>
+        <div class="container" style="margin-top: 100px;" >
+                                                                                  
+  <div >          
+  <table id="my-example">
+    <thead >
+      <tr>
+        <th>M_ID</th>
+        <th>M_NAMA</th>
+        <th>M_JENIS</th>
+        <th>M_HARGA</th>
+      </tr>
+    </thead>
+
+  </table>
+  </div>
+</div>
+
+
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": "../../Database/query/QData/menu.php",
+        "aoColumns": [
+              { mData: 'M_ID' } ,
+              { mData: 'M_NAMA' },
+              { mData: 'M_JENIS' },
+              { mData: 'M_HARGA' }
+            ]
+      });  
+  });
+</script>
 
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
