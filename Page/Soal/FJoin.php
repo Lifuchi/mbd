@@ -23,6 +23,10 @@
     <!-- Custom styles for this template -->
     <link href="../../css/agency.css" rel="stylesheet">
 
+    <!-- datables -->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
 
 
@@ -81,58 +85,51 @@
       </div>
     </nav>
 
+  <section class="bg-light">
+    <div class="container">
+     <h3 class="text-center text-uppercase">Pelanggan yang paling sering melakukan transaksi beserta menu favoritnya</h3><br>
+      <div>          
+          <table id="my-example" class="table table-hover">
+            <thead >
+              <tr>
+                <th>Nama Pelanggan</th>
+                <th>Menu Favorit</th>
+              </tr>
+            </thead>
 
-  <section>
-    <h3 class="text-center">Total Transaksi yang telah dilayani Pegawai</h3>
-    <section class="milih " style="margin-top: -90px; margin-left: 70px;" >
-      <div class="container" style="margin-left: 50%" >
-        <!-- <div class="row "> -->
-                <form >
-                    <input id="IDpegawai" class="inp" type="text" name="IDpegawai" placeholder="ID Pegawai">
-                    <button  id="submit" type="button" name="submit" > Search </button>
-                    <div id="respon" class="respon"></div>
-                </form>
-        <!-- </div> -->
-      </div>
+          </table>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "sAjaxSource": "../../Database/query/Soal/FJoin.php",
+        "aoColumns": [
+              { mData: 'pelanggan' } ,
+              { mData: 'menufav' }
+         ]
+      });  
+  });
+</script>
+
+
+ </div>
+
   </section>
-
-  <script>
-       <?php
-         if(isset($_GET['submit'])){
-          require( '../../Database/connect.php');
-          $idpegawai = $_GET['IDpegawai'];
-          $sql = "SELECT DISTINCT peg_trans('$idpegawai') as JumlahTransaksi FROM pegawai ";
-        
-          $hasil = mysqli_query($sqlconnect,$sql);
-          if($hasil->num_rows > 0){
-            while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-               echo $row['JumlahTransaksi']; 
-              }
-          }else{
-            echo "Tidak ada hasil"; 
-          }
-        }
-      ?>
-  </script>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="../../js/jqBootstrapValidation.js"></script>
+    <script src="../../js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
-
-    <!-- ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-  </body>
+    <script src="../../js/agency.min.js"></script>
 
   </body>
 

@@ -257,10 +257,14 @@
           <div class="col-sm-6  portfolio-item">
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/KinerjaPegawai.php">Kinerja Pegawai</a>
           </div>
-          <div class="col-sm-12  portfolio-item">
+          <div class="col-sm-6  portfolio-item">
             <br>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Ffunction.php">Jumlah Transaksi oleh Pegawai</a>
-          </div>          
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/FFunction.php">Jumlah Transaksi oleh Pegawai</a>
+          </div>   
+          <div class="col-sm-6  portfolio-item">
+            <br>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/FJoin.php">Pelanggan Istimewa</a>
+          </div>       
       </div>      
     </section>
 
@@ -354,9 +358,7 @@ function loaddata()
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <h2 class="text-uppercase">Special Diskon</h2>  
-                  <p>Diskon spesial sebesar 20% bagi pelanggan yang melakukan transaksi di hari ulang tahunnya</p>      
-            
-<!-- action='Database/query/Soal/RFunction.php' -->
+                  <p>Diskon spesial sebesar 20% bagi pelanggan yang melakukan transaksi di hari ulang tahunnya</p> 
                <section class="mencari">
                 <form >
                     <input id="IDtransaksi" class="inp" type="text" name="IDtransaksi" placeholder="ID Transaksi">
