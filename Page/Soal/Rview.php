@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- halo -->
   <head>
 
     <meta charset="utf-8">
