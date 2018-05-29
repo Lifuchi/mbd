@@ -170,7 +170,7 @@
         </div>
 
       </div> -->
-          <div class="container">
+      <div class="container">
         <div class="row text-center">
           <div class="col-lg-12 text-center" style="color: white;">
             <h2 class="section-heading text-uppercase">Finansial</h2>
@@ -249,24 +249,22 @@
     </section>
 
     <section id="finance" class="bg-dark">
-      <div class="container">
-        <div class="row text-center" >
-          <div class="col-lg-12 text-center">
-            <div class="intro-heading text-uppercase" style="top: 20px"></div>
+
+      <div class="row text-center">
+          <div class="col-sm-6  portfolio-item">
+              <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Fview.php">Total Pemasukan</a>
+          </div>
+          <div class="col-sm-6  portfolio-item">
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/KinerjaPegawai.php">Kinerja Pegawai</a>
-        </div>       
+          </div>
+          
       </div>
-      <br>
-      <div class="container">
-        <div class="row text-center" >
-          <div class="col-lg-12 text-center">
-            <div class="intro-heading text-uppercase" style="top: 20px"></div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Fview.php">Total Pemasukan</a>
-        </div>       
-      </div>
-      <br>
       
     </section>
+
+
+
+
     <!-- Clients -->
   
 
