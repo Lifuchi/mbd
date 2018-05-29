@@ -277,8 +277,10 @@ if(isset($_GET['submit'])){
                   <h2 class="text-uppercase">Special Delete</h2>
                   <p class="item-intro text-muted">Tombol ini untuk menghapus SATU menu yang tidak pernah dibeli oleh pelanggan!(kalau tidak ada , tidak akan terhapus apapun)</p>
                   <p>Hasil Penghapusan akan muncul pada log menu </p>
-
-                  <button class="btn btn-primary" id="hapus" name="hapus" type="submit"> SPECIAL DELETE </button>          
+                    <form method="POST" action="../../Database/query/Soal/RProcedure.php" >
+                    <button class="btn btn-primary" id="hapus" name="hapus" type="submit"> SPECIAL DELETE </button> 
+                    </form>
+         
                 </div>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fa fa-times"></i>Close Project</button>
