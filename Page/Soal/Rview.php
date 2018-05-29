@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- halo -->
   <head>
 
     <meta charset="utf-8">
@@ -238,33 +238,3 @@ if(isset($_GET['submit'])){
                     <div id="responses" class="responses"></div>
                 </form>
               </section>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close</button>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="../../js/jqBootstrapValidation.js"></script>
-    <script src="../../js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="../../js/agency.min.js"></script>
-
-  </body>
-
-</html>

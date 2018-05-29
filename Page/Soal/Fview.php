@@ -85,75 +85,36 @@
     </nav>
 
 <div class="text-center" style="margin-top: 100px;"><h2>Total Pemasukan (tanpa pajak)</h2></div>
-<section class="milih">
-  <div class="container" >
-    <div class="row">
-            <form action="Fview.php">
-                <div class="row" style="margin : 10px">
-                      <div class="col-md-4 " >
-                          <select id='gMonth' name="mselect">
-                          <option value=''>--Select Month--</option>
-                          <option value='1'>January</option>
-                          <option value='2'>February</option>
-                          <option value='3'>March</option>
-                          <option value='4'>April</option>
-                          <option value='5'>May</option>
-                          <option value='6'>June</option>
-                          <option value='7'>July</option>
-                          <option value='8'>August</option>
-                          <option value='9'>September</option>
-                          <option value='10'>October</option>
-                          <option value='11'>November</option>
-                          <option value='12'>December</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 ">
-                          <select id='gYears' name="tselect">
-                          <option value=''>--Select Year--</option>
-                          <option value='2017'>2017</option>
-                          <option value='2018'>2018</option>
-                          </select> 
-                        </div>
-                        <div class="col-md-4 ">
-                            <input class="btn btn-primary " id="submit" name="submit" type="submit"></input>
-                        </div>
-              </div>
-            </form>
+<section class="bg-light">
+    <div class="container">
+     <!-- <h3 class="text-center text-uppercase"></h3> -->
+      <div >          
+          <table id="my-example" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bulan</th>
+                <th>Tahun</th>
+                <th>Pemasukan (Rp)</th>
+              </tr>
+            </thead>
+
+          </table>
     </div>
-  </div>
+    </div>
 
-    <ul class="content-all" id="ca">
-  <?php
-    if(isset($_GET['submit'])){
-              require( '../../Database/connect.php');
-              $tsearch = $_GET['tselect'];
-              $msearch = $_GET['mselect'] ;
-               $sql = "CREATE OR REPLACE VIEW pemasukan AS 
-                SELECT SUM(CASE WHEN t.d_id IS NULL THEN dt.dt_jumlah*m.`M_HARGA` WHEN t.d_id IS NOT NULL THEN dt.dt_jumlah*m.`M_HARGA`*(1-d.d_besardiskon) ELSE 0 END) as income
-                FROM TRANSAKSI t
-                LEFT JOIN DISKON d ON t.`D_ID` = d.`D_ID`
-                LEFT JOIN DETIL_TRANSAKSI dt ON t.`T_ID` = dt.`T_ID`
-                AND MONTH(t.T_TGLTRANSAKSI) = $msearch AND YEAR(t.T_TGLTRANSAKSI) = $tsearch
-                LEFT JOIN MENU m ON dt.`M_ID` = m.`M_ID`;";
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "sAjaxSource": "../../Database/query/Soal/FView.php",
+        "aoColumns": [
+              { mData: 'bulan' } ,
+              { mData: 'tahun' },
+              { mData: 'pemasukan' }
+            ]
+      });  
+  });
+</script>
 
-              $result = mysqli_query($sqlconnect,$sql);
-
-              $rowcount = $result->num_rows;
-              echo $rowcount;
-
-              $rowcount = mysqli_num_rows($result);
-              echo $rowcount;
-
-                if (mysqli_num_rows($result) > 0 ){
-                    $row = $result->fetch_array(MYSQLI_NUM);
-                    echo $row[0];
-                }
-                else { echo "Tidak ada hasil";}
-              
-    }
- ?>
-    </ul>
-  </section>
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

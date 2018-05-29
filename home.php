@@ -140,7 +140,7 @@
       </div>
     </section>
 
-       <section id="service2" class="bg-dark">
+       <section id="finance" class="bg-dark">
      <!--  <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -172,9 +172,9 @@
       </div> -->
           <div class="container">
         <div class="row text-center">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Pelanggan</h2>
-            <h3 class="section-subheading text-muted">Terima kasih atas kesetiaan ANDA</h3>
+          <div class="col-lg-12 text-center" style="color: white;">
+            <h2 class="section-heading text-uppercase">Finansial</h2>
+            <h3 class="section-subheading text-muted">Mencatat transaksi dan diskon</h3>
           </div>
         </div>
         <div class="row text-center">
@@ -244,16 +244,29 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div>       
+      </div>
+    </section>
+
+    <section id="finance" class="bg-dark">
+      <div class="container">
         <div class="row text-center" >
           <div class="col-lg-12 text-center">
             <div class="intro-heading text-uppercase" style="top: 20px"></div>
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/KinerjaPegawai.php">Kinerja Pegawai</a>
-        </div>
-       
+        </div>       
       </div>
+      <br>
+      <div class="container">
+        <div class="row text-center" >
+          <div class="col-lg-12 text-center">
+            <div class="intro-heading text-uppercase" style="top: 20px"></div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Fview.php">Total Pemasukan</a>
+        </div>       
+      </div>
+      <br>
+      
     </section>
-
     <!-- Clients -->
   
 
@@ -319,7 +332,7 @@ function loaddata()
                <section class="mencari">
                 <form >
                     <input id="pelanggan" class="inp" type="text" name="pelanggan" placeholder="search">
-                    <button  id="submit-search" type="button" name="submit-search" > search </button>
+                    <button  id="submit-search" type="button" name="submit-search" > Search </button>
                     <div id="responses" class="responses"></div>
                 </form>
               </section>
