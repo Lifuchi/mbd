@@ -346,6 +346,41 @@ function loaddata()
       </div>
     </div>   
 
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2 class="text-uppercase">Special Diskon</h2>  
+                  <p>Diskon spesial sebesar 20% bagi pelanggan yang melakukan transaksi di hari ulang tahunnya</p>      
+            
+<!-- action='Database/query/Soal/RFunction.php' -->
+               <section class="mencari">
+                <form >
+                    <input id="IDtransaksi" class="inp" type="text" name="IDtransaksi" placeholder="ID Transaksi">
+                    <button  id="submit" type="button" name="submit" > Search </button>
+                    <div id="respon" class="respon"></div>
+                </form>
+              </section>
+<!--                 <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>  
         $(document).ready(function(){
@@ -370,57 +405,29 @@ function loaddata()
           });
          });
         });
-    </script>
 
-    <!-- Modal 2 -->
-  
 
-    <!-- Modal 3 -->
-  
+        $(document).ready(function(){
+   
+         $(document).on('click', '#submit', function(){
+            
+           var id = $('#IDtransaksi').val();
+           $.ajax({
+            url: 'Database/query/Soal/FProcedure.php',
+            type: 'POST',
+            data: {
+              'key': 1,
+              'id': id,
+            },
+            success: function(response){
+              $('#IDtransaksi').val('');
+              $('#respon').html(response)
+            }
 
-    <!-- Modal 4 -->
-
-<!-- punya fadhilla yang diskon -->
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  
-
-    <!-- Modal 5 -->
-  
-    <!-- Modal 6 -->
- 
+          });
+         });
+        });
+    </script> 
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
