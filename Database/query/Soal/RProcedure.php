@@ -5,12 +5,16 @@ if(isset($_POST['hapus'])){
 	$hasil = mysqli_query($sqlconnect,$sql);
       if($hasil->num_rows > 0){
 
-            echo "<script type='text/javascript'>alert('Dihapus')</script>";
+            echo "<script type='text/javascript'>alert('Dihapus')
+            window.location.replace(\"../../../Page/Soal/Rview.php\");</script>";
 
         	}else{
-        		echo "tidak ada";	
-            
+             echo "<script type='text/javascript'>alert('Tidak ada data');
+             window.location.replace(\"../../../Page/Soal/Rview.php\");</script>";
+
         	}
+
+
   exit();
 }
 ?>
