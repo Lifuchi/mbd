@@ -87,13 +87,13 @@
 <!-- Rifka View -->
 
 <div class="text-center" style="margin-top: 130px;"><h2>Menu yang pernah dipesan</h2></div>
-<section class="milih" style="margin-top: -90px;"">
+<section class="milih " style="margin-top: -90px; margin-left: 70px;" >
   <div class="container" >
-    <div class="row">
+    <!-- <div class="row "> -->
             <form action="Rview.php">
-                <div class="row">
-                      <div class="col-md-4 " >
-                          <select id='gMonth' name="mselect">
+                <div class="row ">
+                      <div class="col-md-5  " >
+                          <select class="form-control" id='gMonth' name="mselect">
                           <option value=''>--Select Month--</option>
                           <option value='1'>January</option>
                           <option value='2'>February</option>
@@ -109,20 +109,24 @@
                           <option value='12'>December</option>
                           </select> 
                         </div>
-                        <div class="col-md-4 ">
-                          <select id='gYears' name="tselect">
+                        <div class="col-md-5  ">
+                          <select id='gYears' name="tselect" class="form-control">
                           <option value=''>--Select Year--</option>
                           <option value='2017'>2017</option>
                           <option value='2018'>2018</option>
                           </select> 
                         </div>
-                        <div class="col-md-4 ">
-                            <input class="btn btn-primary " id="submit" name="submit" type="submit"></input>
+                        <div class="col-md-2 ">
+                            <input class="btn btn-primary " id="submit" name="submit" type="submit"
+                          ></input>
                         </div>
               </div>
             </form>
-    </div>
+    <!-- </div> -->
   </div>
+
+  <br>
+  <br>
 
     <ul class="content-all" id="ca">
   <?php
@@ -167,7 +171,7 @@ if(isset($_GET['submit'])){
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Menu</h2>
+            <h2 class="section-heading text-uppercase">Log Menu</h2>
             <h3 class="section-subheading text-muted"></h3>
           </div>
         </div>
@@ -177,8 +181,12 @@ if(isset($_GET['submit'])){
     <div class="intro-heading text-uppercase" style="top: 100px"></div>
        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3" style="font-size: 20px">
           <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Edit</button>
-        </a>
-    <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Hapus</button>
+        </a> 
+
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4" style="font-size: 20px">
+             <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Special Hapus</button>
+        </a> 
+     <button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Buat</button>
   </div>
 </div>
 
@@ -187,10 +195,12 @@ if(isset($_GET['submit'])){
   <table id="my-example">
     <thead >
       <tr>
+        <th>No</th>
         <th>M_ID</th>
-        <th>M_NAMA</th>
-        <th>M_JENIS</th>
-        <th>M_HARGA</th>
+        <th>HARGA BARU</th>
+        <th>HARGA LAMA</th>
+        <th>WAKTU</th>
+        <th>INFO</th>
       </tr>
     </thead>
   </table>
@@ -208,13 +218,14 @@ if(isset($_GET['submit'])){
       $('#my-example').dataTable({
         "bProcessing": true, 
         "sPaginationType": "full_numbers",
-        "sAjaxSource": "../../Database/query/QData/menu.php",
+        "sAjaxSource": "../../Database/query/Soal/RTrigger2.php",
         "aoColumns": [
-              { mData: 'M_ID' } ,
-              { mData: 'M_NAMA' },
-              { mData: 'M_JENIS' },
-              { mData: 'M_HARGA' }
-
+              { mData: 'Nomer' } ,
+              { mData: 'M_ID' },
+              { mData: 'M_HARGAB' },
+              { mData: 'M_HARGAL' },
+              { mData: 'waktu' },
+              { mData: 'info' }              
             ]
     });  
   });
@@ -230,36 +241,54 @@ if(isset($_GET['submit'])){
                 <div class="modal-body">
                   <h2 class="text-uppercase">Edit</h2>        
                   <p class="text-muted">Masukkan Nomer Menu dan Harga Baru</p>
-               <section class="mencari">
+               <div class="mencari">
                 <form method="POST" action="../../Database/query/Soal/RTrigger.php" >
                     <input id="menuid" class="inp" type="text" name="menuid" placeholder="M_ID">
                     <input id="harga" class="inp" type="text" name="harga" placeholder="M_HARGA">
                     <button  id="submit-search" type="submit" name="submit-search" > update </button>
                     <div id="responses" class="responses"></div>
                 </form>
-              </section>
-           
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
- 
-                    <i class="fa fa-times"></i>
- 
-                    Close</button>
- 
-
- 
-                </div>
- 
               </div>
- 
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close</button> 
+                </div>
+              </div>
             </div>
- 
           </div>
- 
         </div>
- 
       </div>
- 
     </div>  
+
+<!-- hapus special -->
+       <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="close-modal" data-dismiss="modal"> -->
+            <!-- <div class="lr"> -->
+              <!-- <div class="rl"></div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Special Delete</h2>
+                  <p class="item-intro text-muted">Tombol ini untuk menghapus SATU menu yang tidak pernah dibeli oleh pelanggan!(kalau tidak ada , tidak akan terhapus apapun)</p>
+                  <p>Hasil Penghapusan akan muncul pada log menu </p>
+
+                  <button class="btn btn-primary" id="hapus" name="hapus" type="submit"> SPECIAL DELETE </button>          
+                </div>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   
  
     <!-- Bootstrap core JavaScript -->

@@ -133,7 +133,7 @@
         <div class="row text-center" >
           <div class="col-lg-12 text-center">
             <div class="intro-heading text-uppercase" style="top: 20px"></div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Rview.php">Menu Favorit Lainnya</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/Rview.php">Menu Lainnya</a>
           </div>
         </div>
 
@@ -314,11 +314,11 @@ function loaddata()
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
+          <!-- div class="close-modal" data-dismiss="modal">
             <div class="lr">
               <div class="rl"></div>
             </div>
-          </div>
+          </div> -->
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
@@ -334,9 +334,9 @@ function loaddata()
                     <div id="responses" class="responses"></div>
                 </form>
               </section>
-<!--                 <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fa fa-times"></i>
-                    Close Project</button> -->
+                    Close Project</button>
 
                 </div>
               </div>
