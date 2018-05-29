@@ -12,15 +12,9 @@ if(isset($_POST['key'])){
           // $data = $row['TotalBayar'];
            echo  " Rp " . $row['TotalBayar']; 
           }
-          // $hasil = ["sEcho" => 1,
-          // "iTotalRecords" => count($data),
-          // "iTotalDisplayRecords" => count($data),
-          // "aaData" => $data ];
-          // echo json_encode($hasil);
-
-        	}else{
-        		echo "Tidak ada hasil";	
-        	}
+      }else{
+        echo "Tidak ada hasil";	
+      }
   exit();
 }
 ?>
