@@ -238,21 +238,7 @@ if(isset($_GET['submit'])){
                     <div id="responses" class="responses"></div>
                 </form>
               </section>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
- 
-                    <i class="fa fa-times"></i>
- 
-                    Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-    
-      </section>
- 
+           
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
  
                     <i class="fa fa-times"></i>
