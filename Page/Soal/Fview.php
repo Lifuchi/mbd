@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- halo -->
+
   <head>
- 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -83,39 +83,45 @@
         </div>
       </div>
     </nav>
+ 
 
-<div class="text-center" style="margin-top: 100px;"><h2>Total Pemasukan (tanpa pajak)</h2></div>
-<section class="bg-light">
-    <div class="container">
-     <!-- <h3 class="text-center text-uppercase"></h3> -->
-      <div >          
-          <table id="my-example" class="table table-hover">
-            <thead>
-              <tr>
-                <th>Bulan</th>
-                <th>Tahun</th>
+ 
+<div class="text-center" style="margin-top: 100px;"><h2>Total Pemasukan (tanpa pajak)</h2></div> 
+<section class="bg-light"> 
+    <div class="container"> 
+     <!-- <h3 class="text-center text-uppercase"></h3> --> 
+      <div >           
+          <table id="my-example" class="table table-hover"> 
+            <thead> 
+              <tr> 
+                <th>Bulan</th> 
+                <th>Tahun</th> 
                 <th>Pemasukan (Rp)</th>
-              </tr>
-            </thead>
-
+              </tr> 
+            </thead> 
           </table>
+    </div> 
     </div>
-    </div>
+ 
 
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('#my-example').dataTable({
-        "sAjaxSource": "../../Database/query/Soal/FView.php",
-        "sPaginationType": "full_numbers",
-        "aoColumns": [
-              { mData: 'bulan' } ,
-              { mData: 'tahun' },
-              { mData: 'pemasukan' }
-            ]
-      });  
+ 
+<script type="text/javascript"> 
+  $(document).ready(function() { 
+      $('#my-example').dataTable({ 
+        "sAjaxSource": "../../Database/query/Soal/FView.php", 
+        "sPaginationType": "full_numbers", 
+        "aoColumns": [ 
+              { mData: 'bulan' } , 
+              { mData: 'tahun' }, 
+              { mData: 'pemasukan' } 
+            ] 
+      });   
   });
+ 
 </script>
+ 
 
+ 
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -133,3 +139,4 @@
   </body>
 
 </html>
+ 
