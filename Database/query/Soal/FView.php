@@ -3,8 +3,8 @@
       require( '../../connect.php');
 $sql = "CREATE OR REPLACE VIEW pemasukan AS
 (SELECT MONTH(t.`T_TGLTRANSAKSI`) AS 'bulan', YEAR(t.`T_TGLTRANSAKSI`) AS 'tahun',
-  SUM(CASE WHEN t.d_id IS NULL THEN dt.dt_jumlah*m.`M_HARGA` 
-  WHEN t.d_id IS NOT NULL THEN dt.dt_jumlah*m.`M_HARGA`*(1-d.d_besardiskon) ELSE 0 END) AS 'pemasukan'
+  ROUND(SUM(CASE WHEN t.d_id IS NULL THEN dt.dt_jumlah*m.`M_HARGA` 
+  WHEN t.d_id IS NOT NULL THEN dt.dt_jumlah*m.`M_HARGA`*(1-d.d_besardiskon) ELSE 0 END)) AS 'pemasukan'
 FROM TRANSAKSI t
 LEFT JOIN DISKON d ON t.`D_ID` = d.`D_ID`
 LEFT JOIN DETIL_TRANSAKSI dt ON t.`T_ID` = dt.`T_ID`
