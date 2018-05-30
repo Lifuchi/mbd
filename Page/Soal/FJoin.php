@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -27,7 +26,7 @@
      <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 
   </head>
@@ -43,7 +42,6 @@
        }
     ?>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="../../home.php#page-top">Restoran</a>
@@ -85,37 +83,52 @@
       </div>
     </nav>
 
-  <section class="bg-light">
-    <div class="container">
-     <h3 class="text-center text-uppercase">Pelanggan yang paling sering melakukan transaksi beserta menu favoritnya</h3><br>
-      <div>          
-          <table id="my-example" class="table table-hover">
-            <thead >
-              <tr>
-                <th>Nama Pelanggan</th>
-                <th>Menu Favorit</th>
-              </tr>
-            </thead>
+<!-- Rifka View -->
 
-          </table>
-    </div>
-    </div>
+<div class="text-center" style="margin-top: 130px;"><h2>Pelanggan yang paling sering melakukan transaksi dan menu favoritnya</h2></div>
+<section class="milih " style="margin-top: -90px; margin-left: 38%;" >
+  <h4 style="margin-left: 16%;">Nama Pelanggan:</h4>
+    <ul class="content-all" id="ca">
+  <?php
+      require( '../../Database/connect.php');
+       $sql = "SELECT DISTINCT pe.PE_NAMA as pelanggan, m.M_ID as idfav, m.M_NAMA as menufav
+        FROM pelanggan pe
+        JOIN transaksi t ON pe.`PE_ID`=t.`PE_ID`
+        JOIN detil_transaksi dt ON t.`T_ID`=dt.`T_ID`
+        JOIN menu m ON dt.`M_ID`=m.`M_ID`
+        AND pe.`PE_ID`=(SELECT pe.`PE_ID`
+        FROM pelanggan pe
+        JOIN transaksi t ON pe.`PE_ID`=t.`PE_ID`
+        GROUP BY pe.`PE_ID`
+        ORDER BY COUNT(*) DESC
+        LIMIT 1)
+        GROUP BY m.`M_ID`
+        ORDER BY COUNT(*) DESC
+        LIMIT 1; ";
+      
+      $hasil = mysqli_query($sqlconnect,$sql);
+  
+      if($hasil->num_rows > 0){
 
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('#my-example').dataTable({
-        "sAjaxSource": "../../Database/query/Soal/FJoin.php",
-        "aoColumns": [
-              { mData: 'pelanggan' } ,
-              { mData: 'menufav' }
-         ]
-      });  
-  });
-</script>
-
-
- </div>
-
+        while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
+          $nmpelanggan = $row['pelanggan'];
+          $IDmenu = $row['idfav'];
+          $NMmenu = $row['menufav'];
+          echo "<h4>$nmpelanggan</h4><br>";
+          echo "<h4>Menu Favorit:</h4>";
+          echo "<li>               
+                  <img class='pap' src='../../img/menu/$IDmenu.jpg' alt='makanan' height='100px' width='200px' >
+                  <div class='tes1'></div>
+                  <div class='tes2'></div>
+                  <div class='tes3'></div>  
+                  <div class='tes4'><h2>$NMmenu</h2></div> 
+                </li>";
+          }     
+      }else {
+        echo "Tidak ada hasil";
+      }   
+ ?>
+    </ul>
   </section>
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="../../vendor/jquery/jquery.min.js"></script> -->

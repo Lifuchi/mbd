@@ -84,36 +84,44 @@
 
   <section>
     <h3 class="text-center">Total Transaksi yang telah dilayani Pegawai</h3>
-    <section class="milih " style="margin-top: -90px; margin-left: 70px;" >
-      <div class="container" style="margin-left: 50%" >
-        <!-- <div class="row "> -->
+    <section class="milih " style="margin-top: -90px; margin-left: 34%;" >
+      <div class="container" style=" align-items: auto; text-align: auto;" >
                 <form >
                     <input id="IDpegawai" class="inp" type="text" name="IDpegawai" placeholder="ID Pegawai">
-                    <button  id="submit" type="button" name="submit" > Search </button>
-                    <div id="respon" class="respon"></div>
+                    <input class="btn btn-primary " id="submit" name="submit" type="submit"
+                          ></input>
                 </form>
-        <!-- </div> -->
+
+                <?php
+                  if(isset($_GET['submit'])){
+                        require( '../../Database/connect.php');
+                        $idpegawai = $_GET['IDpegawai'];
+                        //echo $idpegawai;
+                         $sql = "SELECT DISTINCT peg_trans('$idpegawai') as JumlahTransaksi FROM pegawai";
+                       
+                        $hasil = mysqli_query($sqlconnect,$sql);
+                    
+                        if($hasil->num_rows > 0){
+                          while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
+                            if($row['JumlahTransaksi'] > 0){
+                              echo "<br>Pegawai dengan ID " .$idpegawai;
+                              echo " telah melayani " .$row['JumlahTransaksi'];
+                              echo " transaksi";
+                            }
+                            else {
+                              echo "<br>Tidak ada pegawai dengan ID " .$idpegawai;
+                            }  
+                          }
+                               
+                        }else {
+                          echo "Tidak ada hasil";
+                        }   
+                  }
+
+               ?>
       </div>
   </section>
 
-  <script>
-       <?php
-         if(isset($_GET['submit'])){
-          require( '../../Database/connect.php');
-          $idpegawai = $_GET['IDpegawai'];
-          $sql = "SELECT DISTINCT peg_trans('$idpegawai') as JumlahTransaksi FROM pegawai ";
-        
-          $hasil = mysqli_query($sqlconnect,$sql);
-          if($hasil->num_rows > 0){
-            while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-               echo $row['JumlahTransaksi']; 
-              }
-          }else{
-            echo "Tidak ada hasil"; 
-          }
-        }
-      ?>
-  </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
