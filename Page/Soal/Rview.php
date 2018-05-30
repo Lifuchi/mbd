@@ -197,6 +197,7 @@ if(isset($_GET['submit'])){
       <tr>
         <th>No</th>
         <th>M_ID</th>
+        <th>M_NAMA</th>
         <th>HARGA BARU</th>
         <th>HARGA LAMA</th>
         <th>WAKTU</th>
@@ -222,6 +223,7 @@ if(isset($_GET['submit'])){
         "aoColumns": [
               { mData: 'Nomer' } ,
               { mData: 'M_ID' },
+              { mData: 'M_NAMA' },
               { mData: 'M_HARGAB' },
               { mData: 'M_HARGAL' },
               { mData: 'waktu' },
