@@ -8,6 +8,7 @@
 
         while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
           $data[] = $row;
+          
           }     
 
           $hasil = ["sEcho" => 1,
