@@ -97,10 +97,10 @@
                 sesuai bulan dan tahun tertentu
             </p>
           </div>
-<section class="milih " style="margin-top: -90px; margin-left: 70px;" >
+<section class="milih " style="margin-top: -90px; margin-left: 340px;" >
   <div class="container" >
     <!-- <div class="row "> -->
-            <form action="../../Database/query/Soal/Rkursor.php">
+            <form action="../../Database/query/Soal/Rkursor.php" method="POST">
                 <div class="row ">
                       <div class="col-md-5  " >
                           <select class="form-control" id='gMonth' name="mselect">
@@ -132,31 +132,12 @@
                         </div>
               </div>
             </form>
-            <div>
+              <div>
             </div>
     <!-- </div> -->
     </div>
   
   </section>
-    <div class="container" style="margin-top: -100px">
-      <div >          
-          <table id="my-example2" class="table table-hover">
-            <thead >
-              <tr>
-                <th>ID</th>                
-                <th>Nama Pegawai</th>
-                <th>Email</th>
-                <th>Telepon</th>
-                <th>Jenis Kelamin</th>
-                <th>Gaji</th>                
-                <th>jabatan</th>
-
-              </tr>
-            </thead>
-
-          </table>
-    </div>
-    </div>
 <!-- SOAL JOIN -->
   <section class="bg-light">
     <div class="container">
@@ -187,18 +168,18 @@
               { mData: 'harga' }
             ]
       });
-      $('#my-example2').dataTable({
-        "sAjaxSource": "../../Database/query/Soal/Rkursor.php",
-        "aoColumns": [
-              { mData: 'P_ID' },
-              { mData: 'P_NAMA' },
-              { mData: 'P_EMAIL'},
-              { mData: 'P_TELP'},
-              { mData: 'P_JENISKELAMIN'},
-              { mData: 'P_GAJI'},
-              { mData: 'P_JABATAN'}
-            ]
-      });   
+      // $('#my-example2').dataTable({
+      //   "sAjaxSource": "../../Database/query/Soal/Rkursor2.php",
+      //   "aoColumns": [
+      //         { mData: 'P_ID' },
+      //         { mData: 'P_NAMA' },
+      //         { mData: 'P_EMAIL'},
+      //         { mData: 'P_TELP'},
+      //         { mData: 'P_JENISKELAMIN'},
+      //         { mData: 'P_GAJI'},
+      //         { mData: 'P_JABATAN'}
+      //       ]
+      // });   
   });
 </script>
 
