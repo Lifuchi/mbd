@@ -83,8 +83,6 @@
       </div>
     </nav>
 
-<!-- Rifka View -->
-
 <div class="text-center" style="margin-top: 130px;"><h2>Pelanggan yang paling sering melakukan transaksi dan menu favoritnya</h2></div>
 <section class="milih " style="margin-top: -90px; margin-left: 38%;" >
   <h4 style="margin-left: 16%;">Nama Pelanggan:</h4>
