@@ -263,7 +263,7 @@
           </div>   
           <div class="col-sm-6  portfolio-item">
             <br>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/FJoin.php">Pelanggan Istimewa</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="Page/Soal/FJoin.php">Pelanggan Favorit beserta Menunya</a>
           </div>       
       </div>      
     </section>

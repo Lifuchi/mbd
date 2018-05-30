@@ -85,11 +85,9 @@
     </nav>
  
 
- 
-<div class="text-center" style="margin-top: 100px;"><h2>Total Pemasukan (tanpa pajak)</h2></div> 
 <section class="bg-light"> 
     <div class="container"> 
-     <!-- <h3 class="text-center text-uppercase"></h3> --> 
+     <h3 class="text-center text-uppercase">Total Pemasukan (tanpa pajak)</h3> <br>
       <div >           
           <table id="my-example" class="table table-hover"> 
             <thead> 
