@@ -87,12 +87,50 @@
 
 
   <section class="bg-light">
-    <h3  class="text-center">PUNYA FADILLA YANG GAJI PEGAWAI ditambah , TERSERAH DESAIN GIMANA</h3>
-
+    <div class="text-center"><h2>PENAMBAHAN GAJI</h2>
+            <p class="text-muted">Penambahan gaji sebesar 5% kepada pegawai yang telah melayani transaksi lebih dari 30 kali pada bulan dan tahun tertentu
+            </p>
+          </div>
+<section class="milih " style="margin-top: -90px; margin-left: 340px;" >
+  <div class="container" >
+            <form action="../../Database/query/Soal/FCursor.php" method="POST">
+                <div class="row ">
+                      <div class="col-md-5  " >
+                          <select class="form-control" id='month' name="month">
+                          <option value=''>--Select Month--</option>
+                          <option value='1'>January</option>
+                          <option value='2'>February</option>
+                          <option value='3'>March</option>
+                          <option value='4'>April</option>
+                          <option value='5'>May</option>
+                          <option value='6'>June</option>
+                          <option value='7'>July</option>
+                          <option value='8'>August</option>
+                          <option value='9'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
+                          </select> 
+                        </div>
+                        <div class="col-md-5  ">
+                          <select id='year' name="year" class="form-control">
+                          <option value=''>--Select Year--</option>
+                          <option value='2017'>2017</option>
+                          <option value='2018'>2018</option>
+                          </select> 
+                        </div>
+                        <div class="col-md-2 ">
+                            <input class="btn btn-primary " id="submit" name="submit" type="submit"></input>
+                        </div>
+              </div>
+            </form>
+              <div>
+            </div>
+    </div>
   </section>
 
 <section>
-<div class="text-center" style="margin-top: 130px;"><h2>PEMOTONGAN GAJI </h2>
+<div class="text-center"><h2>PEMOTONGAN GAJI </h2>
             <p class="text-muted">Untuk pegawai yang melakukan transaksi kurang dari 10 <br>
                 sesuai bulan dan tahun tertentu
             </p>
@@ -100,7 +138,7 @@
 <section class="milih " style="margin-top: -90px; margin-left: 340px;" >
   <div class="container" >
     <!-- <div class="row "> -->
-            <form action="../../Database/query/Soal/Rkursor.php" method="POST">
+            <form method="POST">
                 <div class="row ">
                       <div class="col-md-5  " >
                           <select class="form-control" id='gMonth' name="mselect">
@@ -136,6 +174,20 @@
             </div>
     <!-- </div> -->
     </div>
+
+    <?php
+      require( '../../Database/connect.php');
+
+    if(isset($_POST['submit'])){
+         $bulan = $_POST['month'] ;
+         $tahun = $_POST['year'] ;    
+          $sql = "Call tambah_gaji($bulan, $tahun)";
+          $hasil = mysqli_query($sqlconnect,$sql);
+      }
+
+      // header("location:../../../Page/Soal/KinerjaPegawai.php");             
+
+?>
   
   </section>
 <!-- SOAL JOIN -->
