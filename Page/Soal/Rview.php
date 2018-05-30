@@ -305,10 +305,10 @@ if(isset($_GET['submit'])){
                <div class="mencari">
                 <form method="POST" action="../../Database/query/Soal/FTrigger.php" >
                     <input id="menuid" class="inp" type="text" name="menuid" placeholder="ID Menu">
-                    <input id="nama" class="inp" type="text" name="nama" placeholder="Nama Menu">
+                    <input id="nama" class="inp" type="text" name="nama" placeholder="Nama Menu"><br><br>
                     <input id="jenis" class="inp" type="text" name="jenis" placeholder="Jenis Menu">
-                    <input id="harga" class="inp" type="text" name="harga" placeholder="Harga Menu">
-                    <button  id="submit-search" type="submit" name="submit-search" > Add </button>
+                    <input id="harga" class="inp" type="text" name="harga" placeholder="Harga Menu"><br><br>
+                    <button  id="submit-add" type="submit" name="submit-add" > Add </button>
                     <div id="responses" class="responses"></div>
                 </form>
               </div>
