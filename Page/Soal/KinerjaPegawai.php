@@ -91,11 +91,53 @@
 
   </section>
 
-  <section>
-    <h3 class="text-center">PUNYA Rifka YANG GAJI PEGAWAI dikurang , TERSERAH DESAIN GIMANA</h3>
-
+<section>
+<div class="text-center" style="margin-top: 130px;"><h2>PEMOTONGAN GAJI </h2>
+            <p class="text-muted">Untuk pegawai yang melakukan transaksi kurang dari 10 <br>
+                sesuai bulan dan tahun tertentu
+            </p>
+          </div>
+<section class="milih " style="margin-top: -90px; margin-left: 340px;" >
+  <div class="container" >
+    <!-- <div class="row "> -->
+            <form action="../../Database/query/Soal/Rkursor.php" method="POST">
+                <div class="row ">
+                      <div class="col-md-5  " >
+                          <select class="form-control" id='gMonth' name="mselect">
+                          <option value=''>--Select Month--</option>
+                          <option value='1'>January</option>
+                          <option value='2'>February</option>
+                          <option value='3'>March</option>
+                          <option value='4'>April</option>
+                          <option value='5'>May</option>
+                          <option value='6'>June</option>
+                          <option value='7'>July</option>
+                          <option value='8'>August</option>
+                          <option value='9'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
+                          </select> 
+                        </div>
+                        <div class="col-md-5  ">
+                          <select id='gYears' name="tselect" class="form-control">
+                          <option value=''>--Select Year--</option>
+                          <option value='2017'>2017</option>
+                          <option value='2018'>2018</option>
+                          </select> 
+                        </div>
+                        <div class="col-md-2 ">
+                            <input class="btn btn-primary " id="save" name="save" type="submit"
+                          ></input>
+                        </div>
+              </div>
+            </form>
+              <div>
+            </div>
+    <!-- </div> -->
+    </div>
+  
   </section>
-
 <!-- SOAL JOIN -->
   <section class="bg-light">
     <div class="container">
@@ -125,7 +167,19 @@
               { mData: 'Diskon' },
               { mData: 'harga' }
             ]
-      });  
+      });
+      // $('#my-example2').dataTable({
+      //   "sAjaxSource": "../../Database/query/Soal/Rkursor2.php",
+      //   "aoColumns": [
+      //         { mData: 'P_ID' },
+      //         { mData: 'P_NAMA' },
+      //         { mData: 'P_EMAIL'},
+      //         { mData: 'P_TELP'},
+      //         { mData: 'P_JENISKELAMIN'},
+      //         { mData: 'P_GAJI'},
+      //         { mData: 'P_JABATAN'}
+      //       ]
+      // });   
   });
 </script>
 
@@ -146,7 +200,5 @@
 
     <!-- Custom scripts for this template -->
     <script src="../../js/agency.min.js"></script>
-
   </body>
-
 </html>
