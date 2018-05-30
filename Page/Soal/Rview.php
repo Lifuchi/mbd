@@ -196,8 +196,8 @@ if(isset($_GET['submit'])){
     <thead >
       <tr>
         <th>No</th>
-        <th>M_ID</th>
-        <th>M_NAMA</th>
+        <th>ID</th>
+        <th>NAMA</th>
         <th>HARGA BARU</th>
         <th>HARGA LAMA</th>
         <th>WAKTU</th>
@@ -302,11 +302,34 @@ if(isset($_GET['submit'])){
                 <div class="modal-body">
                   <h2 class="text-uppercase">Tambah</h2>        
                   <p class="text-muted">Menambahkan menu baru</p>
+                  <p class="item-intro text-muted">ID Menu terakhir: 
+                  <?php
+                    require( '../../Database/connect.php');
+                     $sql = "SELECT M_ID FROM MENU ORDER BY M_ID DESC LIMIT 1";
+                    
+                    $hasil = mysqli_query($sqlconnect,$sql);
+                
+                    if($hasil->num_rows > 0){
+
+                      while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
+                        echo $row['M_ID'];    
+                      }
+                    }else {
+                      echo "Tidak ada hasil";
+                    }   
+                  ?>
+                </p>
+
                <div class="mencari">
                 <form method="POST" action="../../Database/query/Soal/FTrigger.php" >
                     <input id="menuid" class="inp" type="text" name="menuid" placeholder="ID Menu">
                     <input id="nama" class="inp" type="text" name="nama" placeholder="Nama Menu"><br><br>
-                    <input id="jenis" class="inp" type="text" name="jenis" placeholder="Jenis Menu">
+                    <select class="form-control col-md-5" id='jenis' name="jenis" style="margin-left: 30%" >
+                          <option value=''>--Jenis Menu--</option>
+                          <option value='Makanan'>Makanan</option>
+                          <option value='Minuman'>Minuman</option>
+                          <option value='Snack'>Snack</option>
+                    </select><br>
                     <input id="harga" class="inp" type="text" name="harga" placeholder="Harga Menu"><br><br>
                     <button  id="submit-add" type="submit" name="submit-add" > Add </button>
                     <div id="responses" class="responses"></div>

@@ -103,14 +103,15 @@
                     
                         if($hasil->num_rows > 0){
                           while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-                            if($row['JumlahTransaksi'] > 0){
+                            if (is_null($row['JumlahTransaksi'] )){
+                              echo "<br>Tidak ada pegawai dengan ID " .$idpegawai;
+                            }  
+                            else{
                               echo "<br>Pegawai dengan ID " .$idpegawai;
                               echo " telah melayani " .$row['JumlahTransaksi'];
                               echo " transaksi";
                             }
-                            else {
-                              echo "<br>Tidak ada pegawai dengan ID " .$idpegawai;
-                            }  
+                            
                           }
                                
                         }else {
