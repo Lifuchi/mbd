@@ -363,7 +363,7 @@ function loaddata()
                <section class="mencari">
                 <form >
                     <input id="IDtransaksi" class="inp" type="text" name="IDtransaksi" placeholder="ID Transaksi">
-                    <button  id="submit" type="button" name="submit" > Search </button>
+                    <button  id="submit" type="button" name="submit" > Submit </button>
                     <div id="respon" class="respon"></div>
                 </form>
                </section>
