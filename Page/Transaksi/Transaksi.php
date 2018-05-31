@@ -86,25 +86,25 @@
     </nav>
 
     <section>
-      
+      <h4 style="margin-left: 35%">Isi Form untuk Menambah Transaksi</h4>
 
-  <div class="container-fluid" style="width:90vw">
+  <div class="container-fluid" style="width:90vw; margin-left: 28%">
   <div class="row">
   <div class="col-md-6">
-    <input type="text" class="form-control" id="DiskonId" id="DiskonId" placeholder="D_ID" style="padding: 10px; margin: 20px;">
-    <input type="text" class="form-control" id="Pelanggan" id="Pelanggan" placeholder="PE_ID" style="padding: 10px; margin: 20px;">
+    <input type="text" class="form-control" id="DiskonId" id="DiskonId" placeholder="ID Diskon" style="padding: 10px; margin: 20px;">
+    <input type="text" class="form-control" id="Pelanggan" id="Pelanggan" placeholder="ID Pelanggan" style="padding: 10px; margin: 20px;">
     <input type="Date" class="form-control" id="Date" id="Date" placeholder="Date" style="padding: 10px; margin: 20px;">    
-    <input type="text" class="form-control" id="meja" id="meja" placeholder="No Meja" style="padding: 10px; margin: 20px;">    
+    <input type="text" class="form-control" id="meja" id="meja" placeholder="Nomor Meja" style="padding: 10px; margin: 20px;">    
     <!-- $var = "20/04/2012";
     echo date("Y-m-d", strtotime($var) ); -->
     <input type="text" class="form-control" name="menu" id="menu" placeholder="Menu" style="padding: 10px; margin: 20px;">
-    <input type="text" class="form-control" name="jumlah" id="jumlah" placeholder="jumlah" style="padding: 10px; margin: 20px;">    
-    <input type="text" class="form-control" name="koki" id="koki" placeholder="koki" style="padding: 10px; margin: 20px;">
-    <input type="text" class="form-control" name="pelayan" id="pelayan" placeholder="pelayan" style="padding: 10px; margin: 20px;">
-    <input type="text" class="form-control" name="kasir" id="kasir" placeholder="kasir" style="padding: 10px; margin: 20px;">    
+    <input type="text" class="form-control" name="jumlah" id="jumlah" placeholder="Jumlah Menu" style="padding: 10px; margin: 20px;">    
+    <input type="text" class="form-control" name="koki" id="koki" placeholder="Koki" style="padding: 10px; margin: 20px;">
+    <input type="text" class="form-control" name="pelayan" id="pelayan" placeholder="Pelayan" style="padding: 10px; margin: 20px;">
+    <input type="text" class="form-control" name="kasir" id="kasir" placeholder="Kasir" style="padding: 10px; margin: 20px;">    
  </div>
 </div>
-<div class="row text-center">
+<div class="row text-center " style="margin-left: 43%">
       <div class="text-center">
         <button  type="submit" class="btn btn-primary">Submit</button>
       </div>
