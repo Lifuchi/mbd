@@ -7,15 +7,12 @@
       if($hasil->num_rows != 0){
 
         while ($row = $hasil->fetch_array(MYSQLI_ASSOC)) {
-          $data[] = $row;
-          
+          $data[] = $row;          
           }     
-
           $hasil = ["sEcho" => 1,
           "iTotalRecords" => count($data),
           "iTotalDisplayRecords" => count($data),
           "aaData" => $data ];
-
       echo json_encode($hasil);
 }
 ?>
