@@ -138,7 +138,7 @@
 <section class="milih " style="margin-top: -90px; margin-left: 340px;" >
   <div class="container" >
     <!-- <div class="row "> -->
-            <form method="POST">
+            <form action="../../Database/query/Soal/RKursor.php" method="POST">
                 <div class="row ">
                       <div class="col-md-5  " >
                           <select class="form-control" id='gMonth' name="mselect">

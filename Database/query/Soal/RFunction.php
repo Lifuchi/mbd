@@ -10,11 +10,6 @@ if(isset($_POST['save'])){
           $data = $row['biaya'];
            echo  " Rp " . $row['biaya']; 
           }
-          // $hasil = ["sEcho" => 1,
-          // "iTotalRecords" => count($data),
-          // "iTotalDisplayRecords" => count($data),
-          // "aaData" => $data ];
-          // echo json_encode($hasil);
 
         	}else{
         		echo "tidak ada";	
